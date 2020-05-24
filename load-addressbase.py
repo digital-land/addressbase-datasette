@@ -77,10 +77,10 @@ if __name__ == "__main__":
     connection.load_extension(os.environ["SPATIALITE_EXTENSION"])
     connection.execute("select InitSpatialMetadata(1)")
 
-    # try and speed-up loading (350 million rows of CSV for ~33 million BLPUs)
+    # try and speed-up loading
     cursor = connection.cursor()
-    cursor.execute("""PRAGMA synchronous = OFF""")
-    cursor.execute("""PRAGMA journal_mode = OFF""")
+    cursor.execute("PRAGMA synchronous = OFF")
+    cursor.execute("PRAGMA journal_mode = OFF")
 
     connection.execute(
         "CREATE TABLE IF NOT EXISTS {table}({cols});".format(

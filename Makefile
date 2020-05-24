@@ -10,8 +10,8 @@ serve:	postcode.db
 	datasette serve postcode.db --config sql_time_limit_ms:5000 --load-extension=$(SPATIALITE_EXTENSION)
 
 # loading and indexing takes time ..
-postcode.db:	$(ADDRESSBASE) $(ADDRESSBASE_HEADERS) bin/load-addressbase.py
-	python3 bin/load-addressbase.py $(ADDRESSBASE_HEADERS) $(ADDRESSBASE) $@
+postcode.db:	$(ADDRESSBASE) $(ADDRESSBASE_HEADERS) load-addressbase.py
+	python3 load-addressbase.py $(ADDRESSBASE_HEADERS) $(ADDRESSBASE) $@
 
 # the CSV headers are shipped separately
 $(ADDRESSBASE_HEADERS):
