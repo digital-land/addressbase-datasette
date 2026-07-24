@@ -34,6 +34,9 @@ col_types = {
 
 headers = {}
 indexes = {}
+buffers = {}
+
+BATCH_SIZE = 10000
 
 
 def unpack_headers(path, reader):
@@ -51,7 +54,19 @@ def unpack_headers(path, reader):
 def unpack_addressbase(path, reader):
     print(path)
     for row in reader:
-        cursor.execute(headers[row[0]]["sql"], row)
+        record = row[0]
+        buffer = buffers.setdefault(record, [])
+        buffer.append(row)
+        if len(buffer) >= BATCH_SIZE:
+            cursor.executemany(headers[record]["sql"], buffer)
+            buffer.clear()
+
+
+def flush_buffers():
+    for record, buffer in buffers.items():
+        if buffer:
+            cursor.executemany(headers[record]["sql"], buffer)
+            buffer.clear()
 
 
 def zipfile(path, unpack):
@@ -59,7 +74,10 @@ def zipfile(path, unpack):
         for info in z.infolist():
             with z.open(info.filename, "r") as infile:
                 if not info.is_dir():
-                    unpack(info.filename, csv.reader(TextIOWrapper(infile, "utf-8")))
+                    unpack(
+                        info.filename,
+                        csv.reader(TextIOWrapper(infile, "utf-8", newline="")),
+                    )
 
 
 def open_connection(path):
@@ -77,6 +95,9 @@ def create_cursor(connection):
     cursor = connection.cursor()
     cursor.execute("PRAGMA synchronous = OFF")
     cursor.execute("PRAGMA journal_mode = OFF")
+    cursor.execute("PRAGMA locking_mode = EXCLUSIVE")
+    cursor.execute("PRAGMA temp_store = MEMORY")
+    cursor.execute("PRAGMA cache_size = -200000")  # ~200MB page cache
     return cursor
 
 
@@ -85,15 +106,17 @@ def commit(connection):
     connection.commit()
 
 
-def add_index(table, col):
+def add_index(table, col, unique=False):
     idx = f"{table}_{col}_IDX"
-    indexes[idx] = { "table": table, "col": col }
+    indexes[idx] = {"table": table, "col": col, "unique": unique}
 
 
 def create_table(connecton, t):
     table = t["table"]
     sql = f"CREATE TABLE {table} ("
     sep = ""
+    pk = primary_keys.get(table, None)
+    defer_pk_index = False
 
     for col in t["fieldnames"]:
         col_type = col_types.get(col, "TEXT")
@@ -101,8 +124,15 @@ def create_table(connecton, t):
         sql += f"{sep}{col} {col_type}"
         sep = ",\n    "
 
-        if col == primary_keys.get(table, None):
-            sql += " PRIMARY KEY"
+        if col == pk:
+            # INTEGER PRIMARY KEY is a free rowid alias in sqlite3, so it
+            # costs nothing extra during load. A non-integer primary key
+            # needs a real B-tree index: build it in bulk after loading
+            # instead of maintaining it row-by-row on every insert.
+            if col_type == "INTEGER":
+                sql += " PRIMARY KEY"
+            else:
+                defer_pk_index = True
 
     for col in t["fieldnames"]:
         if col in foreign_keys:
@@ -113,6 +143,9 @@ def create_table(connecton, t):
     sql += ")"
 
     connection.execute(sql)
+
+    if defer_pk_index:
+        add_index(table, pk, unique=True)
 
 
 def insert_sql(t):
@@ -148,8 +181,11 @@ def create_tables(connecton):
 
 
 def create_indexes(connecton):
-    for idx, i in indexes:
-        connection.execute(f'CREATE INDEX IF NOT EXISTS {idx} ON {i["table"]} ({i["col"]})')
+    for idx, i in indexes.items():
+        unique = "UNIQUE " if i["unique"] else ""
+        connection.execute(
+            f'CREATE {unique}INDEX IF NOT EXISTS {idx} ON {i["table"]} ({i["col"]})'
+        )
 
 
 if __name__ == "__main__":
@@ -160,6 +196,7 @@ if __name__ == "__main__":
 
     cursor = create_cursor(connection)
     zipfile(addressbase_path, unpack_addressbase)
+    flush_buffers()
 
     commit(connection)
 
