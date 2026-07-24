@@ -5,6 +5,8 @@
 import os
 import csv
 import sqlite3
+import threading
+import queue
 from io import TextIOWrapper
 from zipfile import ZipFile
 
@@ -34,9 +36,9 @@ col_types = {
 
 headers = {}
 indexes = {}
-buffers = {}
 
 BATCH_SIZE = 10000
+QUEUE_SIZE = 20  # batches buffered between parser thread and db writer
 
 
 def unpack_headers(path, reader):
@@ -51,22 +53,51 @@ def unpack_headers(path, reader):
     headers[record] = header
 
 
-def unpack_addressbase(path, reader):
-    print(path)
-    for row in reader:
-        record = row[0]
-        buffer = buffers.setdefault(record, [])
-        buffer.append(row)
-        if len(buffer) >= BATCH_SIZE:
-            cursor.executemany(headers[record]["sql"], buffer)
-            buffer.clear()
+def parse_addressbase(path, q):
+    # runs in a background thread: decompresses and parses CSV rows into
+    # batches while the main thread is free to be blocked inside sqlite3,
+    # since the sqlite3 C extension releases the GIL during execute calls
+    buffers = {}
+
+    def unpack_addressbase(path, reader):
+        print(path)
+        for row in reader:
+            record = row[0]
+            buffer = buffers.setdefault(record, [])
+            buffer.append(row)
+            if len(buffer) >= BATCH_SIZE:
+                q.put((record, buffer))
+                buffers[record] = []
+
+    try:
+        zipfile(path, unpack_addressbase)
+
+        for record, buffer in buffers.items():
+            if buffer:
+                q.put((record, buffer))
+
+        q.put(None)  # sentinel: parsing is done
+    except Exception as e:
+        q.put(e)
 
 
-def flush_buffers():
-    for record, buffer in buffers.items():
-        if buffer:
-            cursor.executemany(headers[record]["sql"], buffer)
-            buffer.clear()
+def load_addressbase(path):
+    q = queue.Queue(maxsize=QUEUE_SIZE)
+    # daemon: if the main thread raises, don't hang the process waiting
+    # on a parser blocked writing to a queue nobody is draining anymore
+    parser = threading.Thread(target=parse_addressbase, args=(path, q), daemon=True)
+    parser.start()
+
+    while True:
+        item = q.get()
+        if item is None:
+            break
+        if isinstance(item, Exception):
+            raise item
+        record, batch = item
+        cursor.executemany(headers[record]["sql"], batch)
+
+    parser.join()
 
 
 def zipfile(path, unpack):
@@ -195,8 +226,7 @@ if __name__ == "__main__":
     create_tables(connection)
 
     cursor = create_cursor(connection)
-    zipfile(addressbase_path, unpack_addressbase)
-    flush_buffers()
+    load_addressbase(addressbase_path)
 
     commit(connection)
 
