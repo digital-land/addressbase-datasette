@@ -5,8 +5,7 @@
 import os
 import csv
 import sqlite3
-import threading
-import queue
+import multiprocessing as mp
 from io import TextIOWrapper
 from zipfile import ZipFile
 
@@ -38,7 +37,8 @@ headers = {}
 indexes = {}
 
 BATCH_SIZE = 10000
-QUEUE_SIZE = 20  # batches buffered between parser thread and db writer
+QUEUE_SIZE = 20  # batches buffered between parser workers and db writer
+WORKERS = max(1, (os.cpu_count() or 2) - 1)  # leave a core for the db writer
 
 
 def unpack_headers(path, reader):
@@ -53,51 +53,72 @@ def unpack_headers(path, reader):
     headers[record] = header
 
 
-def parse_addressbase(path, q):
-    # runs in a background thread: decompresses and parses CSV rows into
-    # batches while the main thread is free to be blocked inside sqlite3,
-    # since the sqlite3 C extension releases the GIL during execute calls
+def worker_parse_addressbase(path, member_names, q):
+    # runs in a worker process: each worker decompresses and parses its own
+    # share of the zip's member files, in parallel across cpu cores, and
+    # sends batches of rows back to the single db-writer process over a
+    # shared queue (sqlite only allows one writer, so writing stays serial)
     buffers = {}
-
-    def unpack_addressbase(path, reader):
-        print(path)
-        for row in reader:
-            record = row[0]
-            buffer = buffers.setdefault(record, [])
-            buffer.append(row)
-            if len(buffer) >= BATCH_SIZE:
-                q.put((record, buffer))
-                buffers[record] = []
-
     try:
-        zipfile(path, unpack_addressbase)
+        with ZipFile(path) as z:
+            for name in member_names:
+                print(name)
+                with z.open(name, "r") as infile:
+                    reader = csv.reader(TextIOWrapper(infile, "utf-8", newline=""))
+                    for row in reader:
+                        record = row[0]
+                        buffer = buffers.setdefault(record, [])
+                        buffer.append(row)
+                        if len(buffer) >= BATCH_SIZE:
+                            q.put((record, buffer))
+                            buffers[record] = []
 
         for record, buffer in buffers.items():
             if buffer:
                 q.put((record, buffer))
-
-        q.put(None)  # sentinel: parsing is done
     except Exception as e:
         q.put(e)
+    finally:
+        q.put(None)  # sentinel: this worker is done
 
 
 def load_addressbase(path):
-    q = queue.Queue(maxsize=QUEUE_SIZE)
-    # daemon: if the main thread raises, don't hang the process waiting
-    # on a parser blocked writing to a queue nobody is draining anymore
-    parser = threading.Thread(target=parse_addressbase, args=(path, q), daemon=True)
-    parser.start()
+    with ZipFile(path) as z:
+        member_names = [i.filename for i in z.infolist() if not i.is_dir()]
 
-    while True:
+    if not member_names:
+        return
+
+    # spread members round-robin across workers; parallelism is capped by
+    # the number of files in the zip, not by cpu count
+    workers = min(WORKERS, len(member_names))
+    chunks = [member_names[i::workers] for i in range(workers)]
+
+    q = mp.Queue(maxsize=QUEUE_SIZE)
+    procs = [
+        mp.Process(target=worker_parse_addressbase, args=(path, chunk, q), daemon=True)
+        for chunk in chunks
+    ]
+    for p in procs:
+        p.start()
+
+    error = None
+    remaining = len(procs)
+    while remaining > 0:
         item = q.get()
         if item is None:
-            break
-        if isinstance(item, Exception):
-            raise item
-        record, batch = item
-        cursor.executemany(headers[record]["sql"], batch)
+            remaining -= 1
+        elif isinstance(item, Exception):
+            error = error or item
+        else:
+            record, batch = item
+            cursor.executemany(headers[record]["sql"], batch)
 
-    parser.join()
+    for p in procs:
+        p.join()
+
+    if error is not None:
+        raise error
 
 
 def zipfile(path, unpack):
