@@ -146,7 +146,11 @@ def open_connection(path):
 def create_cursor(connection):
     cursor = connection.cursor()
     cursor.execute("PRAGMA synchronous = OFF")
-    cursor.execute("PRAGMA journal_mode = OFF")
+    # journal_mode=OFF disables rollback entirely: any interrupted write
+    # (not just a crash) leaves the file corrupted, with tables large
+    # enough that a multi-hour load is a real risk. MEMORY keeps the
+    # journal off disk (still fast) but restores atomicity.
+    cursor.execute("PRAGMA journal_mode = MEMORY")
     cursor.execute("PRAGMA locking_mode = EXCLUSIVE")
     cursor.execute("PRAGMA temp_store = MEMORY")
     cursor.execute("PRAGMA cache_size = -200000")  # ~200MB page cache
@@ -235,9 +239,9 @@ def create_tables(connecton):
 def create_indexes(connecton):
     for idx, i in indexes.items():
         unique = "UNIQUE " if i["unique"] else ""
-        connection.execute(
-            f'CREATE {unique}INDEX IF NOT EXISTS {idx} ON {i["table"]} ({i["col"]})'
-        )
+        sql = f'CREATE {unique}INDEX IF NOT EXISTS {idx} ON {i["table"]} ({i["col"]})'
+        print(sql)
+        connection.execute(sql)
 
 
 if __name__ == "__main__":
@@ -248,7 +252,6 @@ if __name__ == "__main__":
 
     cursor = create_cursor(connection)
     load_addressbase(addressbase_path)
-
     commit(connection)
 
     create_indexes(connection)
