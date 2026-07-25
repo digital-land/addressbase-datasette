@@ -1,0 +1,580 @@
+CLASSIFICATION_CODE,DESCRIPTION,PARENT
+C,Commercial,
+CA,Agricultural,C
+CA01,Farm / Non-Residential Associated Building,CA
+CA02,Fishery,CA
+CA02FF,Fish Farming,CA02
+CA02FH,Fish Hatchery,CA02
+CA02FP,Fish Processing,CA02
+CA02OY,Oyster / Mussel Bed,CA02
+CA03,Horticulture,CA
+CA03SH,Smallholding,CA03
+CA03VY,Vineyard,CA03
+CA03WB,Watercress Bed,CA03
+CA04,Slaughter House / Abattoir,CA
+CB,Ancillary Building,C
+CC,Community Services,C
+CC02,Law Court,CC
+CC03,Prison,CC
+CC03HD,HM Detention Centre,CC03
+CC03PR,HM Prison Service,CC03
+CC03SC,Secure Residential Accommodation,CC03
+CC04,Public / Village Hall / Other Community Facility,CC
+CC04YR,Youth Recreational / Social Club,CC04
+CC05,Public Convenience,CC
+CC06,Cemetery / Crematorium / Graveyard. In Current Use.,CC
+CC06CB,Columbarium,CC06
+CC06CN,Crematorium,CC06
+CC06CR,Chapel Of Rest,CC06
+CC06CY,Cemetery,CC06
+CC06MC,Military Cemetery,CC06
+CC06MY,Mortuary,CC06
+CC07,Church Hall / Religious Meeting Place / Hall,CC
+CC08,Community Service Centre / Office,CC
+CC09,Public Household Waste Recycling Centre (HWRC),CC
+CC10,Recycling Site,CC
+CC11,CCTV,CC
+CC12,Job Centre,CC
+CE,Education,C
+CE01,College,CE
+CE01FE,Further Education,CE01
+CE01HE,Higher Education,CE01
+CE02,Children’s Nursery / Crèche,CE
+CE03,Preparatory / First / Primary / Infant / Junior / Middle School,CE
+CE03FS,First School,CE03
+CE03IS,Infant School,CE03
+CE03JS,Junior School,CE03
+CE03MS,Middle School,CE03
+CE03NP,Non State Primary / Preparatory School,CE03
+CE03PS,Primary School,CE03
+CE04,Secondary / High School,CE
+CE04NS,Non State Secondary School,CE04
+CE04SS,Secondary School,CE04
+CE05,University,CE
+CE06,Special Needs Establishment.,CE
+CE07,Other Educational Establishment,CE
+CH,Hotel / Motel / Boarding / Guest House,C
+CH01,Boarding / Guest House / Bed And Breakfast / Youth Hostel,CH
+CH01YH,Youth Hostel,CH01
+CH02,Holiday Let/Accomodation/Short-Term Let Other Than CH01,CH
+CH03,Hotel/Motel,CH
+CI,"Industrial Applicable to manufacturing, engineering, maintenance, storage / wholesale distribution and extraction sites",C
+CI01,Factory/Manufacturing,CI
+CI01AW,Aircraft Works,CI01
+CI01BB,Boat Building,CI01
+CI01BR,Brick Works,CI01
+CI01BW,Brewery,CI01
+CI01CD,Cider Manufacture,CI01
+CI01CM,Chemical Works,CI01
+CI01CW,Cement Works,CI01
+CI01DA,Dairy Processing,CI01
+CI01DY,Distillery,CI01
+CI01FL,Flour Mill,CI01
+CI01FO,Food Processing,CI01
+CI01GW,Glassworks,CI01
+CI01MG,Manufacturing,CI01
+CI01OH,Oast House,CI01
+CI01OR,Oil Refining,CI01
+CI01PG,Pottery Manufacturing,CI01
+CI01PM,Paper Mill,CI01
+CI01PW,Printing Works,CI01
+CI01SR,Sugar Refinery,CI01
+CI01SW,Steel Works,CI01
+CI01TL,Timber Mill,CI01
+CI01WN,Winery,CI01
+CI01YD,Shipyard,CI01
+CI02,Mineral / Ore Working / Quarry / Mine,CI
+CI02MA,Mineral Mining / Active,CI02
+CI02MD,Mineral Distribution / Storage,CI02
+CI02MP,Mineral Processing,CI02
+CI02OA,Oil / Gas Extraction / Active,CI02
+CI02QA,Mineral Quarrying / Open Extraction / Active,CI02
+CI03,Workshop / Light Industrial,CI
+CI03GA,Servicing Garage,CI03
+CI04,Warehouse / Store / Storage Depot,CI
+CI04CS,Crop Handling / Storage,CI04
+CI04PL,Postal Sorting / Distribution,CI04
+CI04SO,Solid Fuel Storage,CI04
+CI04TS,Timber Storage,CI04
+CI05,Wholesale Distribution,CI
+CI05SF,Solid Fuel Distribution,CI05
+CI05TD,Timber Distribution,CI05
+CI06,Recycling Plant,CI
+CI07,Incinerator / Waste Transfer Station,CI
+CI08,Maintenance Depot,CI
+CL,Leisure - Applicable to recreational sites and enterprises,C
+CL01,Amusements,CL
+CL01LP,Leisure Pier,CL01
+CL02,Holiday / Campsite,CL
+CL02CG,Camping,CL02
+CL02CV,Caravanning,CL02
+CL02HA,Holiday Accommodation,CL02
+CL02HO,Holiday Centre,CL02
+CL02YC,Youth Organisation Camp,CL02
+CL03,Library,CL
+CL03RR,Reading Room,CL03
+CL04,Museum / Gallery,CL
+CL04AC,Art Centre / Gallery,CL04
+CL04AM,Aviation Museum,CL04
+CL04HG,Heritage Centre,CL04
+CL04IM,Industrial Museum,CL04
+CL04MM,Military Museum,CL04
+CL04NM,Maritime Museum,CL04
+CL04SM,Science Museum,CL04
+CL04TM,Transport Museum,CL04
+CL06,Indoor / Outdoor Leisure / Sporting Activity / Centre,CL
+CL06AH,Athletics Facility,CL06
+CL06BF,Bowls Facility,CL06
+CL06CK,Cricket Facility,CL06
+CL06CU,Curling Facility,CL06
+CL06DS,Diving / Swimming Facility,CL06
+CL06EQ,Equestrian Sports Facility,CL06
+CL06FB,Football Facility,CL06
+CL06FI,Fishing / Angling Facility,CL06
+CL06GF,Golf Facility,CL06
+CL06GL,Gliding Facility,CL06
+CL06GR,Greyhound Racing Facility,CL06
+CL06HF,Hockey Facility,CL06
+CL06HR,Horse Racing Facility,CL06
+CL06HV,Historic Vessel / Aircraft / Vehicle,CL06
+CL06LS,Activity / Leisure / Sports Centre,CL06
+CL06ME,Model Sports Facility,CL06
+CL06MF,Motor Sports Facility,CL06
+CL06PF,Playing Field,CL06
+CL06QS,Racquet Sports Facility,CL06
+CL06RF,Rugby Facility,CL06
+CL06RG,Recreation Ground,CL06
+CL06SI,Shinty Facility,CL06
+CL06SK,Skateboarding Facility,CL06
+CL06SX,Civilian Firing Facility,CL06
+CL06TB,Tenpin Bowling Facility,CL06
+CL06TN,Public Tennis Court,CL06
+CL06WA,Water Sports Facility,CL06
+CL06WP,Winter Sports Facility,CL06
+CL06WY,Wildlife Sports Facility,CL06
+CL06YF,Cycling Sports Facility,CL06
+CL07,Bingo Hall / Cinema / Conference / Exhibition Centre / Theatre / Concert Hall,CL
+CL07CI,Cinema,CL07
+CL07EN,Entertainment Complex,CL07
+CL07EX,Conference / Exhibition Centre,CL07
+CL07TH,Theatre,CL07
+CL08,Zoo / Theme Park,CL
+CL08AK,Amusement Park,CL08
+CL08AQ,Aquatic Attraction,CL08
+CL08MX,Model Village Site,CL08
+CL08WZ,Wildlife / Zoological Park,CL08
+CL09,"Beach Hut (Recreational, Non-Residential Use Only)",CL
+CL10,Licensed Private Members’ Club,CL
+CL10RE,Recreational / Social Club,CL10
+CL11,Arena / Stadium,CL
+CL11SD,Stadium,CL11
+CL11SJ,Showground,CL11
+CM,Medical,C
+CM01,Dentist,CM
+CM02,General Practice Surgery / Clinic,CM
+CM02HC,Health Centre,CM02
+CM02HL,Health Care Services,CM02
+CM03,Hospital / Hospice,CM
+CM03HI,Hospice,CM03
+CM03HP,Hospital,CM03
+CM04,Medical / Testing / Research Laboratory,CM
+CM05,Professional Medical Service,CM
+CM05ZS,Assessment / Development Services,CM05
+CM06,Pharmacy,CM
+CN,Animal Centre,C
+CN01,Cattery / Kennel,CN
+CN02,Animal Services,CN
+CN02AX,Animal Quarantining,CN02
+CN03,Equestrian,CN
+CN03HB,Horse Racing / Breeding Stable,CN03
+CN03SB,Commercial Stabling / Riding,CN03
+CN04,Vet / Animal Medical Treatment,CN
+CN05,Animal / Bird / Marine Sanctuary,CN
+CN05AN,Animal Sanctuary,CN05
+CN05MR,Marine Sanctuary,CN05
+CO,Office,C
+CO01,Office / Work Studio,CO
+CO01EM,"Embassy /, High Commission / Consulate",CO01
+CO01FM,Film Studio,CO01
+CO01GV,Central Government Service,CO01
+CO01LG,Local Government Service,CO01
+CO02,Broadcasting (TV / Radio),CO
+CR,Retail,C
+CR01,Bank / Financial Service,CR
+CR02,Retail Service Agent,CR
+CR02EV,Electric Car Charging Station,CR02
+CR02PO,Post Office,CR02
+CR04,Market (Indoor / Outdoor),CR
+CR04FK,Fish Market,CR04
+CR04FV,Fruit / Vegetable Market,CR04
+CR04LV,Livestock Market,CR04
+CR05,Petrol Filling Station,CR
+CR06,Public House / Bar / Nightclub,CR
+CR06BA,Bar,CR06
+CR06NC,Nightclub,CR06
+CR06PH,Public House,CR06
+CR07,Restaurant / Cafeteria,CR
+CR08,Shop / Showroom,CR
+CR08CS,Convenience Store,CR08
+CR08GC,Garden Centre,CR08
+CR08SM,Supermarket,CR08
+CR09,Other Licensed Premise / Vendor,CR
+CR09BS,Betting Shop,CR09
+CR09OL,Off-licence,CR09
+CR10,Fast Food Outlet / Takeaway (Hot / Cold),CR
+CR11,Automated Teller Machine (ATM),CR
+CS,Storage Land,C
+CS01,General Storage Land,CS
+CS02,Builders’ Yard,CS
+CT,Transport,C
+CT01,Airfield / Airstrip / Airport / Air Transport Infrastructure Facility,CT
+CT01AF,Airfield,CT01
+CT01AI,Air Transport Infrastructure Services,CT01
+CT01AP,Airport,CT01
+CT01AY,Air Passenger Terminal,CT01
+CT01HS,Helicopter Station,CT01
+CT01HT,Heliport / Helipad,CT01
+CT02,Bus Shelter,CT
+CT03,Car / Coach / Commercial Vehicle / Taxi Parking / Park And Ride Site,CT
+CT03PK,Public Park And Ride,CT03
+CT03PP,Public Car Parking,CT03
+CT03PU,Public Coach Parking,CT03
+CT03VP,Public Commercial Vehicle Parking,CT03
+CT04,Goods Freight Handling / Terminal,CT
+CT04AE,Air Freight Terminal,CT04
+CT04CF,Container Freight,CT04
+CT04RH,Road Freight Transport,CT04
+CT04RT,Rail Freight Transport,CT04
+CT05,Marina,CT
+CT06,Mooring,CT
+CT07,Railway Asset,CT
+CT08,Station / Interchange / Terminal / Halt,CT
+CT08BC,Bus / Coach Station,CT08
+CT08RS,Railway Station,CT08
+CT08VH,Vehicular Rail Terminal,CT08
+CT09,Transport Track / Way,CT
+CT09CL,Cliff Railway,CT09
+CT09CX,Chair Lift / Cable Car / Ski Tow,CT09
+CT09MO,Monorail,CT09
+CT10,Vehicle Storage,CT
+CT10BG,Boat Storage,CT10
+CT10BU,Bus / Coach Depot,CT10
+CT11,Transport Related Infrastructure,CT
+CT11AD,Aqueduct,CT11
+CT11CA,Road Bridge Over Canal,CT11
+CT11LK,Lock,CT11
+CT11MU,Road Bridge Over Multiple,CT11
+CT11NN,Road Bridge Over No Network,CT11
+CT11PA,Road Bridge Over Path,CT11
+CT11RA,Road Bridge Over Railway,CT11
+CT11RO,Road Bridge Over Road,CT11
+CT11WA,Road Bridge Over Water,CT11
+CT11WE,Weir,CT11
+CT11WG,Weighbridge / Load Gauge,CT11
+CT12,Overnight Lorry Park,CT
+CT13,Harbour / Port / Dock / Dockyard / Slipway / Landing Stage / Pier / Jetty / Pontoon / Terminal / Berthing / Quay,CT
+CT13FR,Passenger Ferry Terminal,CT13
+CT13NB,Non-Tanker Nautical Berthing,CT13
+CT13NF,Nautical Refuelling Facility,CT13
+CT13SA,Slipway,CT13
+CT13SP,Ship Passenger Terminal,CT13
+CT13TK,Tanker Berthing,CT13
+CT13VF,Vehicular Ferry Terminal,CT13
+CU,Utility,C
+CU01,Electricity Sub-Station,CU
+CU02,Landfill,CU
+CU03,Power Station / Energy Production,CU
+CU03ED,Electricity Distribution Facility,CU03
+CU03EP,Electricity Production Facility,CU03
+CU03WF,Wind Farm,CU03
+CU03WU,Wind Turbine,CU03
+CU04,Pump House / Pumping Station / Water Tower,CU
+CU04WC,Water Controlling / Pumping,CU04
+CU04WD,Water Distribution / Pumping,CU04
+CU04WM,Water Quality Monitoring,CU04
+CU04WS,Water Storage,CU04
+CU04WW,Waste Water Distribution / Pumping,CU04
+CU06,Telecommunication,CU
+CU06TE,Telecommunications Mast,CU06
+CU06TX,Telephone Exchange,CU06
+CU07,Water / Waste Water / Sewage Treatment Works,CU
+CU07WR,Waste Water Treatment,CU07
+CU07WT,Water Treatment,CU07
+CU08,Gas / Oil Storage / Distribution,CU
+CU08GG,Gas Governor,CU08
+CU08GH,Gas Holder,CU08
+CU08OT,Oil Terminal,CU08
+CU09,Other Utility Use,CU
+CU09CQ,Cable Terminal Station,CU09
+CU09OV,Observatory,CU09
+CU09RA,Radar Station,CU09
+CU09SE,Satellite Earth Station,CU09
+CU10,Waste Management,CU
+CU11,Telephone Box,CU
+CU11OP,Other Public Telephones,CU11
+CU12,Dam,CU
+CX,Emergency / Rescue Service,C
+CX01,Police / Transport Police / Station,CX
+CX01PT,Police Training,CX01
+CX02,Fire Station,CX
+CX02FT,Fire Service Training,CX02
+CX03,Ambulance Station,CX
+CX03AA,Air Sea Rescue / Air Ambulance,CX03
+CX04,Lifeboat Services / Station,CX
+CX05,Coastguard Rescue / Lookout / Station,CX
+CX06,Mountain Rescue Station,CX
+CX07,Lighthouse,CX
+CX08,Police Box / Kiosk,CX
+CZ,Information,C
+CZ01,Advertising Hoarding,CZ
+CZ02,Tourist Information Signage,CZ
+CZ02VI,Visitor Information,CZ02
+CZ03,Traffic Information Signage,CZ
+L,Land,
+LA,Agricultural - Applicable to land in farm ownership and not run as a separate business enterprise,L
+LA01,Grazing Land,LA
+LA02,Permanent Crop / Crop Rotation,LA
+LA02OC,Orchard,LA02
+LB,Ancillary Building,L
+LB99AV,Aviary / Dovecot / Cage,LB
+LB99BD,Bandstand,LB
+LB99PI,Pavilion / Changing Room,LB
+LB99SV,Sports Viewing Structure,LB
+LC,Burial Ground,L
+LC01,Historic / Disused Cemetery / Graveyard,LC
+LD,Development,L
+LD01,Development Site,LD
+LD01CC,Commercial Construction Site,LD01
+LD01CO,Community Construction Site,LD01
+LD01RN,Residential Construction Site,LD01
+LD01TC,Transport Construction Site,LD01
+LF,Forestry,L
+LF02,Forest / Arboretum / Pinetum (Managed / Unmanaged),LF
+LF02AU,Arboretum,LF02
+LF03,Woodland,LF
+LL,Allotment,L
+LM,Amenity - Open areas not attracting visitors,L
+LM01,Landscaped Roundabout,LM
+LM02,Verge / Central Reservation,LM
+LM02NV,Natural Central Reservation,LM02
+LM02VE,Natural Verge,LM02
+LM03,Maintained Amenity Land,LM
+LM04,Maintained Surfaced Area,LM
+LM04MV,Made Central Reservation,LM04
+LM04PV,Pavement,LM04
+LO,Open Space,L
+LO01,Heath / Moorland,LO
+LP,Park,L
+LP01,Public Park / Garden,LP
+LP02,Public Open Space / Nature Reserve,LP
+LP03,Playground,LP
+LP03PA,Play Area,LP03
+LP03PD,Paddling Pool,LP03
+LP04,Private Park / Garden,LP
+LU,Unused Land,L
+LU01,Vacant / Derelict Land,LU
+LW,Water,L
+LW01,Lake / Reservoir,LW
+LW01BP,Balancing Pond,LW01
+LW01BV,Buried Reservoir,LW01
+LW02,Named Pond,LW
+LW02DE,Dew Pond,LW02
+LW02DP,Decoy Pond,LW02
+LW02IW,Static Water,LW02
+LW03,Waterway,LW
+LW03DR,Drain,LW03
+LW03LR,Leats / Races,LW03
+M,Military,
+MA,Army,M
+MA99AG,Army Military Storage,MA
+MA99AR,Army Military Range,MA
+MA99AS,Army Site,MA
+MA99AT,Army Military Training,MA
+MB,Ancillary Building,M
+MB99TG,Military Target,MB
+MF,Air Force,M
+MF99UG,Air Force Military Storage,MF
+MF99UR,Air Force Military Range,MF
+MF99US,Air Force Site,MF
+MF99UT,Air Force Military Training,MF
+MG,Defence Estates,M
+MN,Navy,M
+MN99VG,Naval Military Storage,MN
+MN99VR,Naval Military Range,MN
+MN99VS,Naval Site,MN
+MN99VT,Naval Military Training,MN
+O,Other (Ordnance Survey Only),
+OA,Aid To Navigation,O
+OA01,Aid To Aeronautical Navigation,OA
+OA01AL,Aeronautical Navigation Beacon / Light,OA01
+OA01LL,Landing Light,OA01
+OA01SQ,Signal Square,OA01
+OA01WK,Wind Sock / Wind Tee,OA01
+OA02,Aid To Nautical Navigation,OA
+OA02DM,Daymark,OA02
+OA02FG,Fog Horn Warning,OA02
+OA02NL,Nautical Navigation Beacon / Light,OA02
+OA03,Aid To Road Navigation,OA
+OA03GP,Guide Post,OA03
+OC,Coastal Protection / Flood Prevention,O
+OC01,Boulder Wall / Sea Wall,OC
+OC02,Flood Gate / Flood Sluice Gate / Flood Valve,OC
+OC03,Groyne,OC
+OC04,Rip-Rap,OC
+OE,Emergency Support,O
+OE01,Beach Office / First Aid Facility,OE
+OE02,Emergency Telephone (Non Motorway),OE
+OE03,Fire Alarm Structure / Fire Observation Tower / Fire Beater Facility,OE
+OE04,Emergency Equipment Point / Emergency Siren / Warning Flag,OE
+OE05,Lifeguard Facility,OE
+OE06,LIfe / Belt / Buoy / Float / Jacket / Safety Rope,OE
+OF,Street Furniture,O
+OG,Agricultural Support Objects,O
+OG01,Fish Ladder / Lock / Pen / Trap,OG
+OG02,Livestock Pen / Dip,OG
+OG03,Currick,OG
+OG04,Slurry Bed / Pit,OG
+OH,Historical Site / Object,O
+OH01,Historic Structure / Object,OH
+OI,Industrial Support,O
+OI01,Adit / Incline / Level,OI
+OI02,Caisson / Dry Dock / Grid,OI
+OI03,Channel / Conveyor / Conduit / Pipe,OI
+OI04,Chimney / Flue,OI
+OI05,Crane / Hoist / Winch / Material Elevator,OI
+OI06,Flare Stack,OI
+OI07,Hopper / Silo / Cistern / Tank,OI
+OI08,Grab / Skip / Other Industrial Waste Machinery / Discharging,OI
+OI09,Kiln / Oven / Smelter,OI
+OI10,Manhole / Shaft,OI
+OI11,Industrial Overflow / Sluice / Valve / Valve Housing,OI
+OI12,Cooling Tower,OI
+OI13,Solar Panel / Waterwheel,OI
+OI14,Telephone Pole / Post,OI
+OI15,Electricity Distribution Pole / Pylon,OI
+ON,Significant Natural Object,O
+ON01,Boundary / Significant / Historic Tree / Pollard,ON
+ON02,Boundary / Significant Rock / Boulder,ON
+ON03,Natural Hole (Blow / Shake / Swallow),ON
+OO,Ornamental / Cultural Object,O
+OO02,Mausoleum / Tomb / Grave,OO
+OO03,Simple Ornamental Object,OO
+OO04,Maze,OO
+OP,Sport / Leisure Support,O
+OP01,Butt / Hide,OP
+OP02,Gallop / Ride,OP
+OP03,Miniature Railway,OP
+OR,Royal Mail Infrastructure,O
+OR01,Postal Box,OR
+OR02,Postal Delivery Box / Pouch,OR
+OR03,PO Box,OR
+OR04,Additional Mail / Packet Addressee,OR
+OS,Scientific / Observation Support,O
+OS01,Meteorological Station / Equipment,OS
+OS02,Radar / Satellite Infrastructure,OS
+OS03,Telescope / Observation Infrastructure / Astronomy,OS
+OT,Transport Support,O
+OT01,Cattle Grid / Ford,OT
+OT02,Elevator / Escalator / Steps,OT
+OT03,Footbridge / Walkway,OT
+OT04,Pole / Post / Bollard (Restricting Vehicular Access),OT
+OT05,Subway / Underpass,OT
+OT06,Customs Inspection Facility,OT
+OT07,Lay-By,OT
+OT08,Level Crossing,OT
+OT09,Mail Pick Up,OT
+OT10,Railway Pedestrian Crossing,OT
+OT11,Railway Buffer,OT
+OT12,Rail Drag,OT
+OT13,Rail Infrastructure Services,OT
+OT14,Rail Kilometre Distance Marker,OT
+OT15,Railway Lighting,OT
+OT16,Rail Mile Distance Marker,OT
+OT17,Railway Turntable,OT
+OT18,Rail Weighbridge,OT
+OT19,Rail Signalling,OT
+OT20,Railway Traverse,OT
+OT21,Goods Tramway,OT
+OT22,Road Drag,OT
+OT23,Vehicle Dip,OT
+OT24,Road Turntable,OT
+OT25,Road Mile Distance Marker,OT
+OT26,Road Kilometre Distance Marker,OT
+OT27,Road Infrastructure Services,OT
+OU,Unsupported Site,O
+OU01,Cycle Parking Facility,OU
+OU04,Picnic / Barbeque Site,OU
+OU05,Travelling Persons Site,OU
+OU08,Shelter (Not Including Bus Shelter),OU
+P,Parent Shell,
+PP,Property Shell,P
+PS,Street Record,P
+R,Residential,
+RB,Ancillary Building,R
+RC,Car Park Space,R
+RC01,Allocated Parking,RC
+RD,Dwelling,R
+RD01,Caravan,RD
+RD02,Detached,RD
+RD03,Semi-Detached,RD
+RD04,Terraced,RD
+RD06,Self Contained Flat (Includes Maisonette / Apartment),RD
+RD07,House Boat,RD
+RD08,Sheltered Accommodation,RD
+RD10,Privately Owned Holiday Caravan / Chalet,RD
+RG,Garage,R
+RG02,Lock-Up Garage / Garage Court,RG
+RH,House In Multiple Occupation,R
+RH01,HMO Parent,RH
+RH02,HMO Bedsit / Other Non Self Contained Accommodation,RH
+RH03,HMO Not Further Divided,RH
+RI,Residential Institution,R
+RI01,Care / Nursing Home,RI
+RI02,Communal Residence,RI
+RI02NC,Non-Commercial Lodgings,RI02
+RI02RC,Religious Community,RI02
+RI03,Residential Education,RI
+U,Unclassified,
+UC,Awaiting Classification,U
+UP,Pending Internal Investigation,U
+X,Dual Use,
+Z,Object of Interest,
+ZA,Archaeological Dig Site,Z
+ZM,Monument,Z
+ZM01,Obelisk / Milestone / Standing Stone,ZM
+ZM01OB,Obelisk,ZM01
+ZM01ST,Standing Stone,ZM01
+ZM02,Memorial / Market Cross,ZM
+ZM03,Statue,ZM
+ZM04,Castle / Historic Ruin,ZM
+ZM05,Other Structure,ZM
+ZM05BS,Boundary Stone,ZM05
+ZM05CE,Cascade / Fountain,ZM05
+ZM05PN,Permanent Art Display / Sculpture,ZM05
+ZM05WI,Windmill (Inactive),ZM05
+ZS,Stately Home,Z
+ZU,Underground Feature,Z
+ZU01,Cave,ZU
+ZU04,Pothole / Natural Hole,ZU
+ZV,Other Underground Feature,Z
+ZV01,Cellar,ZV
+ZV02,Disused Mine,ZV
+ZV02MI,Mineral Mining / Inactive,ZV02
+ZV02OI,Oil And / Gas Extraction/ Inactive,ZV02
+ZV02QI,Mineral Quarrying And / Open Extraction / Inactive,ZV02
+ZV03,Well / Spring,ZV
+ZV03SG,Spring,ZV03
+ZV03WL,Well,ZV03
+ZW,Place Of Worship,Z
+ZW99AB,Abbey,ZW
+ZW99CA,Cathedral,ZW
+ZW99CH,Church,ZW
+ZW99CP,Chapel,ZW
+ZW99GU,Gurdwara,ZW
+ZW99KH,Kingdom Hall,ZW
+ZW99LG,Lych Gate,ZW
+ZW99MQ,Mosque,ZW
+ZW99MT,Minster,ZW
+ZW99SU,Stupa,ZW
+ZW99SY,Synagogue,ZW
+ZW99TP,Temple,ZW

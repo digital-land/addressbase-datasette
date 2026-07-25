@@ -9,7 +9,7 @@ AddressBase_HEADERS_CSV=cache/addressbase-premium-header-files.zip
 Classification_ZIP=cache/addressbase-product-classification-scheme.zip
 Classification_CSV=data/addressbase-classification.csv
 
-all:	$(DB) $(Classification_CSV)
+all:	$(DB)
 
 $(Classification_CSV):	$(Classification_ZIP) bin/classification.py
 	@mkdir -p data
@@ -22,7 +22,7 @@ server:	$(DB)
 	--metadata datasette/metadata.json \
 	--template-dir datasette/templates/
 
-$(DB):	$(DB_DATA) bin/load.py
+$(DB):	$(DB_DATA) $(Classification_CSV) bin/load.py
 	@rm -f $@
 	python3 bin/load.py $@
 

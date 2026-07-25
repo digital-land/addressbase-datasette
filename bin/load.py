@@ -12,6 +12,7 @@ from zipfile import ZipFile
 
 header_path = "./cache/addressbase-premium-header-files.zip"
 addressbase_path = "./cache/AB76GB_CSV.zip"
+classification_path = "./data/addressbase-classification.csv"
 db_path = "./addressbase.sqlite3"
 cursor = None
 
@@ -22,6 +23,11 @@ primary_keys = {
     "BLPU": "UPRN",
     "STREET": "USRN",
     "LPI": "LPI_KEY",
+    # CLASSIFICATION_CODE isn't an AddressBase Premium header-driven table
+    # (it's built separately by load_classification_code below), but adding
+    # its pk here makes CLASSIFICATION.CLASSIFICATION_CODE pick up a
+    # foreign key + index via the generic mechanism below
+    "CLASSIFICATION_CODE": "CLASSIFICATION_CODE",
 }
 
 foreign_keys = {v: k for k, v in primary_keys.items()}
@@ -253,6 +259,32 @@ def create_indexes(connecton):
         connection.execute(sql)
 
 
+def load_classification_code(connection, path):
+    # separate from the AddressBase Premium tables (which already have a
+    # CLASSIFICATION table of per-UPRN classification records); this is
+    # the code/description/parent lookup built by bin/classification.py.
+    # CLASSIFICATION.CLASSIFICATION_CODE has a foreign key into this table
+    # (see primary_keys/foreign_keys above), joining the two.
+    connection.execute(
+        """
+        CREATE TABLE CLASSIFICATION_CODE (
+            CLASSIFICATION_CODE TEXT PRIMARY KEY,
+            DESCRIPTION TEXT,
+            PARENT TEXT REFERENCES CLASSIFICATION_CODE (CLASSIFICATION_CODE)
+        )
+        """
+    )
+    with open(path, newline="") as f:
+        reader = csv.reader(f)
+        next(reader)  # header
+        connection.executemany(
+            "INSERT INTO CLASSIFICATION_CODE "
+            "(CLASSIFICATION_CODE, DESCRIPTION, PARENT) VALUES (?, ?, ?)",
+            reader,
+        )
+    connection.commit()
+
+
 if __name__ == "__main__":
     connection = open_connection(db_path)
 
@@ -266,6 +298,8 @@ if __name__ == "__main__":
     print("integrity check after load, before indexing ..")
     for row in connection.execute("PRAGMA integrity_check"):
         print(row[0])
+
+    load_classification_code(connection, classification_path)
 
     create_indexes(connection)
 
