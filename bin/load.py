@@ -39,6 +39,7 @@ indexes = {}
 BATCH_SIZE = 10000
 QUEUE_SIZE = 20  # batches buffered between parser workers and db writer
 WORKERS = max(1, (os.cpu_count() or 2) - 1)  # leave a core for the db writer
+COMMIT_INTERVAL = 200  # batches per commit (~2M rows) to bound WAL growth
 
 
 def unpack_headers(path, reader):
@@ -104,6 +105,7 @@ def load_addressbase(path):
 
     error = None
     remaining = len(procs)
+    batches_since_commit = 0
     while remaining > 0:
         item = q.get()
         if item is None:
@@ -113,6 +115,13 @@ def load_addressbase(path):
         else:
             record, batch = item
             cursor.executemany(headers[record]["sql"], batch)
+            batches_since_commit += 1
+            # commit periodically instead of one giant transaction spanning
+            # the whole load: keeps the WAL bounded and limits how much a
+            # future failure could lose or corrupt
+            if batches_since_commit >= COMMIT_INTERVAL:
+                cursor.connection.commit()
+                batches_since_commit = 0
 
     for p in procs:
         p.join()
@@ -145,12 +154,14 @@ def open_connection(path):
 
 def create_cursor(connection):
     cursor = connection.cursor()
-    cursor.execute("PRAGMA synchronous = OFF")
-    # journal_mode=OFF disables rollback entirely: any interrupted write
-    # (not just a crash) leaves the file corrupted, with tables large
-    # enough that a multi-hour load is a real risk. MEMORY keeps the
-    # journal off disk (still fast) but restores atomicity.
-    cursor.execute("PRAGMA journal_mode = MEMORY")
+    # journal_mode=MEMORY keeps the rollback journal off disk but, per the
+    # sqlite docs, risks corruption for large transactions since it must
+    # hold every modified page's original image in RAM until commit - a
+    # real risk when the whole load was previously one multi-GB
+    # transaction. WAL is disk-backed and combines with EXCLUSIVE locking
+    # mode (below) for comparable bulk-load speed without that risk.
+    cursor.execute("PRAGMA journal_mode = WAL")
+    cursor.execute("PRAGMA synchronous = NORMAL")
     cursor.execute("PRAGMA locking_mode = EXCLUSIVE")
     cursor.execute("PRAGMA temp_store = MEMORY")
     cursor.execute("PRAGMA cache_size = -200000")  # ~200MB page cache
@@ -255,6 +266,10 @@ if __name__ == "__main__":
     commit(connection)
 
     create_indexes(connection)
+
+    # merge the WAL back into the main file so the db is a single
+    # self-contained file with no lingering -wal/-shm sidecars
+    connection.execute("PRAGMA wal_checkpoint(TRUNCATE)")
 
     connection.close()
     exit(0)
