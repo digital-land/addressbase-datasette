@@ -154,15 +154,13 @@ def open_connection(path):
 
 def create_cursor(connection):
     cursor = connection.cursor()
-    # journal_mode=MEMORY keeps the rollback journal off disk but, per the
-    # sqlite docs, risks corruption for large transactions since it must
-    # hold every modified page's original image in RAM until commit - a
-    # real risk when the whole load was previously one multi-GB
-    # transaction. WAL is disk-backed and combines with EXCLUSIVE locking
-    # mode (below) for comparable bulk-load speed without that risk.
-    cursor.execute("PRAGMA journal_mode = WAL")
-    cursor.execute("PRAGMA synchronous = NORMAL")
-    cursor.execute("PRAGMA locking_mode = EXCLUSIVE")
+    # WAL + synchronous=NORMAL still produced "database disk image is
+    # malformed" on a full load, same as journal_mode=MEMORY before it, so
+    # journal mode isn't the (whole) story. Fall back to sqlite's plain
+    # defaults - DELETE journal, synchronous=FULL, normal locking - to
+    # isolate whether the non-default pragmas are implicated at all.
+    cursor.execute("PRAGMA journal_mode = DELETE")
+    cursor.execute("PRAGMA synchronous = FULL")
     cursor.execute("PRAGMA temp_store = MEMORY")
     cursor.execute("PRAGMA cache_size = -200000")  # ~200MB page cache
     return cursor
@@ -265,11 +263,11 @@ if __name__ == "__main__":
     load_addressbase(addressbase_path)
     commit(connection)
 
-    create_indexes(connection)
+    print("integrity check after load, before indexing ..")
+    for row in connection.execute("PRAGMA integrity_check"):
+        print(row[0])
 
-    # merge the WAL back into the main file so the db is a single
-    # self-contained file with no lingering -wal/-shm sidecars
-    connection.execute("PRAGMA wal_checkpoint(TRUNCATE)")
+    create_indexes(connection)
 
     connection.close()
     exit(0)
