@@ -1,580 +1,1077 @@
-CLASSIFICATION_CODE,DESCRIPTION,PARENT
-C,Commercial,
-CA,Agricultural,C
-CA01,Farm / Non-Residential Associated Building,CA
-CA02,Fishery,CA
-CA02FF,Fish Farming,CA02
-CA02FH,Fish Hatchery,CA02
-CA02FP,Fish Processing,CA02
-CA02OY,Oyster / Mussel Bed,CA02
-CA03,Horticulture,CA
-CA03SH,Smallholding,CA03
-CA03VY,Vineyard,CA03
-CA03WB,Watercress Bed,CA03
-CA04,Slaughter House / Abattoir,CA
-CB,Ancillary Building,C
-CC,Community Services,C
-CC02,Law Court,CC
-CC03,Prison,CC
-CC03HD,HM Detention Centre,CC03
-CC03PR,HM Prison Service,CC03
-CC03SC,Secure Residential Accommodation,CC03
-CC04,Public / Village Hall / Other Community Facility,CC
-CC04YR,Youth Recreational / Social Club,CC04
-CC05,Public Convenience,CC
-CC06,Cemetery / Crematorium / Graveyard. In Current Use.,CC
-CC06CB,Columbarium,CC06
-CC06CN,Crematorium,CC06
-CC06CR,Chapel Of Rest,CC06
-CC06CY,Cemetery,CC06
-CC06MC,Military Cemetery,CC06
-CC06MY,Mortuary,CC06
-CC07,Church Hall / Religious Meeting Place / Hall,CC
-CC08,Community Service Centre / Office,CC
-CC09,Public Household Waste Recycling Centre (HWRC),CC
-CC10,Recycling Site,CC
-CC11,CCTV,CC
-CC12,Job Centre,CC
-CE,Education,C
-CE01,College,CE
-CE01FE,Further Education,CE01
-CE01HE,Higher Education,CE01
-CE02,Children’s Nursery / Crèche,CE
-CE03,Preparatory / First / Primary / Infant / Junior / Middle School,CE
-CE03FS,First School,CE03
-CE03IS,Infant School,CE03
-CE03JS,Junior School,CE03
-CE03MS,Middle School,CE03
-CE03NP,Non State Primary / Preparatory School,CE03
-CE03PS,Primary School,CE03
-CE04,Secondary / High School,CE
-CE04NS,Non State Secondary School,CE04
-CE04SS,Secondary School,CE04
-CE05,University,CE
-CE06,Special Needs Establishment.,CE
-CE07,Other Educational Establishment,CE
-CH,Hotel / Motel / Boarding / Guest House,C
-CH01,Boarding / Guest House / Bed And Breakfast / Youth Hostel,CH
-CH01YH,Youth Hostel,CH01
-CH02,Holiday Let/Accomodation/Short-Term Let Other Than CH01,CH
-CH03,Hotel/Motel,CH
-CI,"Industrial Applicable to manufacturing, engineering, maintenance, storage / wholesale distribution and extraction sites",C
-CI01,Factory/Manufacturing,CI
-CI01AW,Aircraft Works,CI01
-CI01BB,Boat Building,CI01
-CI01BR,Brick Works,CI01
-CI01BW,Brewery,CI01
-CI01CD,Cider Manufacture,CI01
-CI01CM,Chemical Works,CI01
-CI01CW,Cement Works,CI01
-CI01DA,Dairy Processing,CI01
-CI01DY,Distillery,CI01
-CI01FL,Flour Mill,CI01
-CI01FO,Food Processing,CI01
-CI01GW,Glassworks,CI01
-CI01MG,Manufacturing,CI01
-CI01OH,Oast House,CI01
-CI01OR,Oil Refining,CI01
-CI01PG,Pottery Manufacturing,CI01
-CI01PM,Paper Mill,CI01
-CI01PW,Printing Works,CI01
-CI01SR,Sugar Refinery,CI01
-CI01SW,Steel Works,CI01
-CI01TL,Timber Mill,CI01
-CI01WN,Winery,CI01
-CI01YD,Shipyard,CI01
-CI02,Mineral / Ore Working / Quarry / Mine,CI
-CI02MA,Mineral Mining / Active,CI02
-CI02MD,Mineral Distribution / Storage,CI02
-CI02MP,Mineral Processing,CI02
-CI02OA,Oil / Gas Extraction / Active,CI02
-CI02QA,Mineral Quarrying / Open Extraction / Active,CI02
-CI03,Workshop / Light Industrial,CI
-CI03GA,Servicing Garage,CI03
-CI04,Warehouse / Store / Storage Depot,CI
-CI04CS,Crop Handling / Storage,CI04
-CI04PL,Postal Sorting / Distribution,CI04
-CI04SO,Solid Fuel Storage,CI04
-CI04TS,Timber Storage,CI04
-CI05,Wholesale Distribution,CI
-CI05SF,Solid Fuel Distribution,CI05
-CI05TD,Timber Distribution,CI05
-CI06,Recycling Plant,CI
-CI07,Incinerator / Waste Transfer Station,CI
-CI08,Maintenance Depot,CI
-CL,Leisure - Applicable to recreational sites and enterprises,C
-CL01,Amusements,CL
-CL01LP,Leisure Pier,CL01
-CL02,Holiday / Campsite,CL
-CL02CG,Camping,CL02
-CL02CV,Caravanning,CL02
-CL02HA,Holiday Accommodation,CL02
-CL02HO,Holiday Centre,CL02
-CL02YC,Youth Organisation Camp,CL02
-CL03,Library,CL
-CL03RR,Reading Room,CL03
-CL04,Museum / Gallery,CL
-CL04AC,Art Centre / Gallery,CL04
-CL04AM,Aviation Museum,CL04
-CL04HG,Heritage Centre,CL04
-CL04IM,Industrial Museum,CL04
-CL04MM,Military Museum,CL04
-CL04NM,Maritime Museum,CL04
-CL04SM,Science Museum,CL04
-CL04TM,Transport Museum,CL04
-CL06,Indoor / Outdoor Leisure / Sporting Activity / Centre,CL
-CL06AH,Athletics Facility,CL06
-CL06BF,Bowls Facility,CL06
-CL06CK,Cricket Facility,CL06
-CL06CU,Curling Facility,CL06
-CL06DS,Diving / Swimming Facility,CL06
-CL06EQ,Equestrian Sports Facility,CL06
-CL06FB,Football Facility,CL06
-CL06FI,Fishing / Angling Facility,CL06
-CL06GF,Golf Facility,CL06
-CL06GL,Gliding Facility,CL06
-CL06GR,Greyhound Racing Facility,CL06
-CL06HF,Hockey Facility,CL06
-CL06HR,Horse Racing Facility,CL06
-CL06HV,Historic Vessel / Aircraft / Vehicle,CL06
-CL06LS,Activity / Leisure / Sports Centre,CL06
-CL06ME,Model Sports Facility,CL06
-CL06MF,Motor Sports Facility,CL06
-CL06PF,Playing Field,CL06
-CL06QS,Racquet Sports Facility,CL06
-CL06RF,Rugby Facility,CL06
-CL06RG,Recreation Ground,CL06
-CL06SI,Shinty Facility,CL06
-CL06SK,Skateboarding Facility,CL06
-CL06SX,Civilian Firing Facility,CL06
-CL06TB,Tenpin Bowling Facility,CL06
-CL06TN,Public Tennis Court,CL06
-CL06WA,Water Sports Facility,CL06
-CL06WP,Winter Sports Facility,CL06
-CL06WY,Wildlife Sports Facility,CL06
-CL06YF,Cycling Sports Facility,CL06
-CL07,Bingo Hall / Cinema / Conference / Exhibition Centre / Theatre / Concert Hall,CL
-CL07CI,Cinema,CL07
-CL07EN,Entertainment Complex,CL07
-CL07EX,Conference / Exhibition Centre,CL07
-CL07TH,Theatre,CL07
-CL08,Zoo / Theme Park,CL
-CL08AK,Amusement Park,CL08
-CL08AQ,Aquatic Attraction,CL08
-CL08MX,Model Village Site,CL08
-CL08WZ,Wildlife / Zoological Park,CL08
-CL09,"Beach Hut (Recreational, Non-Residential Use Only)",CL
-CL10,Licensed Private Members’ Club,CL
-CL10RE,Recreational / Social Club,CL10
-CL11,Arena / Stadium,CL
-CL11SD,Stadium,CL11
-CL11SJ,Showground,CL11
-CM,Medical,C
-CM01,Dentist,CM
-CM02,General Practice Surgery / Clinic,CM
-CM02HC,Health Centre,CM02
-CM02HL,Health Care Services,CM02
-CM03,Hospital / Hospice,CM
-CM03HI,Hospice,CM03
-CM03HP,Hospital,CM03
-CM04,Medical / Testing / Research Laboratory,CM
-CM05,Professional Medical Service,CM
-CM05ZS,Assessment / Development Services,CM05
-CM06,Pharmacy,CM
-CN,Animal Centre,C
-CN01,Cattery / Kennel,CN
-CN02,Animal Services,CN
-CN02AX,Animal Quarantining,CN02
-CN03,Equestrian,CN
-CN03HB,Horse Racing / Breeding Stable,CN03
-CN03SB,Commercial Stabling / Riding,CN03
-CN04,Vet / Animal Medical Treatment,CN
-CN05,Animal / Bird / Marine Sanctuary,CN
-CN05AN,Animal Sanctuary,CN05
-CN05MR,Marine Sanctuary,CN05
-CO,Office,C
-CO01,Office / Work Studio,CO
-CO01EM,"Embassy /, High Commission / Consulate",CO01
-CO01FM,Film Studio,CO01
-CO01GV,Central Government Service,CO01
-CO01LG,Local Government Service,CO01
-CO02,Broadcasting (TV / Radio),CO
-CR,Retail,C
-CR01,Bank / Financial Service,CR
-CR02,Retail Service Agent,CR
-CR02EV,Electric Car Charging Station,CR02
-CR02PO,Post Office,CR02
-CR04,Market (Indoor / Outdoor),CR
-CR04FK,Fish Market,CR04
-CR04FV,Fruit / Vegetable Market,CR04
-CR04LV,Livestock Market,CR04
-CR05,Petrol Filling Station,CR
-CR06,Public House / Bar / Nightclub,CR
-CR06BA,Bar,CR06
-CR06NC,Nightclub,CR06
-CR06PH,Public House,CR06
-CR07,Restaurant / Cafeteria,CR
-CR08,Shop / Showroom,CR
-CR08CS,Convenience Store,CR08
-CR08GC,Garden Centre,CR08
-CR08SM,Supermarket,CR08
-CR09,Other Licensed Premise / Vendor,CR
-CR09BS,Betting Shop,CR09
-CR09OL,Off-licence,CR09
-CR10,Fast Food Outlet / Takeaway (Hot / Cold),CR
-CR11,Automated Teller Machine (ATM),CR
-CS,Storage Land,C
-CS01,General Storage Land,CS
-CS02,Builders’ Yard,CS
-CT,Transport,C
-CT01,Airfield / Airstrip / Airport / Air Transport Infrastructure Facility,CT
-CT01AF,Airfield,CT01
-CT01AI,Air Transport Infrastructure Services,CT01
-CT01AP,Airport,CT01
-CT01AY,Air Passenger Terminal,CT01
-CT01HS,Helicopter Station,CT01
-CT01HT,Heliport / Helipad,CT01
-CT02,Bus Shelter,CT
-CT03,Car / Coach / Commercial Vehicle / Taxi Parking / Park And Ride Site,CT
-CT03PK,Public Park And Ride,CT03
-CT03PP,Public Car Parking,CT03
-CT03PU,Public Coach Parking,CT03
-CT03VP,Public Commercial Vehicle Parking,CT03
-CT04,Goods Freight Handling / Terminal,CT
-CT04AE,Air Freight Terminal,CT04
-CT04CF,Container Freight,CT04
-CT04RH,Road Freight Transport,CT04
-CT04RT,Rail Freight Transport,CT04
-CT05,Marina,CT
-CT06,Mooring,CT
-CT07,Railway Asset,CT
-CT08,Station / Interchange / Terminal / Halt,CT
-CT08BC,Bus / Coach Station,CT08
-CT08RS,Railway Station,CT08
-CT08VH,Vehicular Rail Terminal,CT08
-CT09,Transport Track / Way,CT
-CT09CL,Cliff Railway,CT09
-CT09CX,Chair Lift / Cable Car / Ski Tow,CT09
-CT09MO,Monorail,CT09
-CT10,Vehicle Storage,CT
-CT10BG,Boat Storage,CT10
-CT10BU,Bus / Coach Depot,CT10
-CT11,Transport Related Infrastructure,CT
-CT11AD,Aqueduct,CT11
-CT11CA,Road Bridge Over Canal,CT11
-CT11LK,Lock,CT11
-CT11MU,Road Bridge Over Multiple,CT11
-CT11NN,Road Bridge Over No Network,CT11
-CT11PA,Road Bridge Over Path,CT11
-CT11RA,Road Bridge Over Railway,CT11
-CT11RO,Road Bridge Over Road,CT11
-CT11WA,Road Bridge Over Water,CT11
-CT11WE,Weir,CT11
-CT11WG,Weighbridge / Load Gauge,CT11
-CT12,Overnight Lorry Park,CT
-CT13,Harbour / Port / Dock / Dockyard / Slipway / Landing Stage / Pier / Jetty / Pontoon / Terminal / Berthing / Quay,CT
-CT13FR,Passenger Ferry Terminal,CT13
-CT13NB,Non-Tanker Nautical Berthing,CT13
-CT13NF,Nautical Refuelling Facility,CT13
-CT13SA,Slipway,CT13
-CT13SP,Ship Passenger Terminal,CT13
-CT13TK,Tanker Berthing,CT13
-CT13VF,Vehicular Ferry Terminal,CT13
-CU,Utility,C
-CU01,Electricity Sub-Station,CU
-CU02,Landfill,CU
-CU03,Power Station / Energy Production,CU
-CU03ED,Electricity Distribution Facility,CU03
-CU03EP,Electricity Production Facility,CU03
-CU03WF,Wind Farm,CU03
-CU03WU,Wind Turbine,CU03
-CU04,Pump House / Pumping Station / Water Tower,CU
-CU04WC,Water Controlling / Pumping,CU04
-CU04WD,Water Distribution / Pumping,CU04
-CU04WM,Water Quality Monitoring,CU04
-CU04WS,Water Storage,CU04
-CU04WW,Waste Water Distribution / Pumping,CU04
-CU06,Telecommunication,CU
-CU06TE,Telecommunications Mast,CU06
-CU06TX,Telephone Exchange,CU06
-CU07,Water / Waste Water / Sewage Treatment Works,CU
-CU07WR,Waste Water Treatment,CU07
-CU07WT,Water Treatment,CU07
-CU08,Gas / Oil Storage / Distribution,CU
-CU08GG,Gas Governor,CU08
-CU08GH,Gas Holder,CU08
-CU08OT,Oil Terminal,CU08
-CU09,Other Utility Use,CU
-CU09CQ,Cable Terminal Station,CU09
-CU09OV,Observatory,CU09
-CU09RA,Radar Station,CU09
-CU09SE,Satellite Earth Station,CU09
-CU10,Waste Management,CU
-CU11,Telephone Box,CU
-CU11OP,Other Public Telephones,CU11
-CU12,Dam,CU
-CX,Emergency / Rescue Service,C
-CX01,Police / Transport Police / Station,CX
-CX01PT,Police Training,CX01
-CX02,Fire Station,CX
-CX02FT,Fire Service Training,CX02
-CX03,Ambulance Station,CX
-CX03AA,Air Sea Rescue / Air Ambulance,CX03
-CX04,Lifeboat Services / Station,CX
-CX05,Coastguard Rescue / Lookout / Station,CX
-CX06,Mountain Rescue Station,CX
-CX07,Lighthouse,CX
-CX08,Police Box / Kiosk,CX
-CZ,Information,C
-CZ01,Advertising Hoarding,CZ
-CZ02,Tourist Information Signage,CZ
-CZ02VI,Visitor Information,CZ02
-CZ03,Traffic Information Signage,CZ
-L,Land,
-LA,Agricultural - Applicable to land in farm ownership and not run as a separate business enterprise,L
-LA01,Grazing Land,LA
-LA02,Permanent Crop / Crop Rotation,LA
-LA02OC,Orchard,LA02
-LB,Ancillary Building,L
-LB99AV,Aviary / Dovecot / Cage,LB
-LB99BD,Bandstand,LB
-LB99PI,Pavilion / Changing Room,LB
-LB99SV,Sports Viewing Structure,LB
-LC,Burial Ground,L
-LC01,Historic / Disused Cemetery / Graveyard,LC
-LD,Development,L
-LD01,Development Site,LD
-LD01CC,Commercial Construction Site,LD01
-LD01CO,Community Construction Site,LD01
-LD01RN,Residential Construction Site,LD01
-LD01TC,Transport Construction Site,LD01
-LF,Forestry,L
-LF02,Forest / Arboretum / Pinetum (Managed / Unmanaged),LF
-LF02AU,Arboretum,LF02
-LF03,Woodland,LF
-LL,Allotment,L
-LM,Amenity - Open areas not attracting visitors,L
-LM01,Landscaped Roundabout,LM
-LM02,Verge / Central Reservation,LM
-LM02NV,Natural Central Reservation,LM02
-LM02VE,Natural Verge,LM02
-LM03,Maintained Amenity Land,LM
-LM04,Maintained Surfaced Area,LM
-LM04MV,Made Central Reservation,LM04
-LM04PV,Pavement,LM04
-LO,Open Space,L
-LO01,Heath / Moorland,LO
-LP,Park,L
-LP01,Public Park / Garden,LP
-LP02,Public Open Space / Nature Reserve,LP
-LP03,Playground,LP
-LP03PA,Play Area,LP03
-LP03PD,Paddling Pool,LP03
-LP04,Private Park / Garden,LP
-LU,Unused Land,L
-LU01,Vacant / Derelict Land,LU
-LW,Water,L
-LW01,Lake / Reservoir,LW
-LW01BP,Balancing Pond,LW01
-LW01BV,Buried Reservoir,LW01
-LW02,Named Pond,LW
-LW02DE,Dew Pond,LW02
-LW02DP,Decoy Pond,LW02
-LW02IW,Static Water,LW02
-LW03,Waterway,LW
-LW03DR,Drain,LW03
-LW03LR,Leats / Races,LW03
-M,Military,
-MA,Army,M
-MA99AG,Army Military Storage,MA
-MA99AR,Army Military Range,MA
-MA99AS,Army Site,MA
-MA99AT,Army Military Training,MA
-MB,Ancillary Building,M
-MB99TG,Military Target,MB
-MF,Air Force,M
-MF99UG,Air Force Military Storage,MF
-MF99UR,Air Force Military Range,MF
-MF99US,Air Force Site,MF
-MF99UT,Air Force Military Training,MF
-MG,Defence Estates,M
-MN,Navy,M
-MN99VG,Naval Military Storage,MN
-MN99VR,Naval Military Range,MN
-MN99VS,Naval Site,MN
-MN99VT,Naval Military Training,MN
-O,Other (Ordnance Survey Only),
-OA,Aid To Navigation,O
-OA01,Aid To Aeronautical Navigation,OA
-OA01AL,Aeronautical Navigation Beacon / Light,OA01
-OA01LL,Landing Light,OA01
-OA01SQ,Signal Square,OA01
-OA01WK,Wind Sock / Wind Tee,OA01
-OA02,Aid To Nautical Navigation,OA
-OA02DM,Daymark,OA02
-OA02FG,Fog Horn Warning,OA02
-OA02NL,Nautical Navigation Beacon / Light,OA02
-OA03,Aid To Road Navigation,OA
-OA03GP,Guide Post,OA03
-OC,Coastal Protection / Flood Prevention,O
-OC01,Boulder Wall / Sea Wall,OC
-OC02,Flood Gate / Flood Sluice Gate / Flood Valve,OC
-OC03,Groyne,OC
-OC04,Rip-Rap,OC
-OE,Emergency Support,O
-OE01,Beach Office / First Aid Facility,OE
-OE02,Emergency Telephone (Non Motorway),OE
-OE03,Fire Alarm Structure / Fire Observation Tower / Fire Beater Facility,OE
-OE04,Emergency Equipment Point / Emergency Siren / Warning Flag,OE
-OE05,Lifeguard Facility,OE
-OE06,LIfe / Belt / Buoy / Float / Jacket / Safety Rope,OE
-OF,Street Furniture,O
-OG,Agricultural Support Objects,O
-OG01,Fish Ladder / Lock / Pen / Trap,OG
-OG02,Livestock Pen / Dip,OG
-OG03,Currick,OG
-OG04,Slurry Bed / Pit,OG
-OH,Historical Site / Object,O
-OH01,Historic Structure / Object,OH
-OI,Industrial Support,O
-OI01,Adit / Incline / Level,OI
-OI02,Caisson / Dry Dock / Grid,OI
-OI03,Channel / Conveyor / Conduit / Pipe,OI
-OI04,Chimney / Flue,OI
-OI05,Crane / Hoist / Winch / Material Elevator,OI
-OI06,Flare Stack,OI
-OI07,Hopper / Silo / Cistern / Tank,OI
-OI08,Grab / Skip / Other Industrial Waste Machinery / Discharging,OI
-OI09,Kiln / Oven / Smelter,OI
-OI10,Manhole / Shaft,OI
-OI11,Industrial Overflow / Sluice / Valve / Valve Housing,OI
-OI12,Cooling Tower,OI
-OI13,Solar Panel / Waterwheel,OI
-OI14,Telephone Pole / Post,OI
-OI15,Electricity Distribution Pole / Pylon,OI
-ON,Significant Natural Object,O
-ON01,Boundary / Significant / Historic Tree / Pollard,ON
-ON02,Boundary / Significant Rock / Boulder,ON
-ON03,Natural Hole (Blow / Shake / Swallow),ON
-OO,Ornamental / Cultural Object,O
-OO02,Mausoleum / Tomb / Grave,OO
-OO03,Simple Ornamental Object,OO
-OO04,Maze,OO
-OP,Sport / Leisure Support,O
-OP01,Butt / Hide,OP
-OP02,Gallop / Ride,OP
-OP03,Miniature Railway,OP
-OR,Royal Mail Infrastructure,O
-OR01,Postal Box,OR
-OR02,Postal Delivery Box / Pouch,OR
-OR03,PO Box,OR
-OR04,Additional Mail / Packet Addressee,OR
-OS,Scientific / Observation Support,O
-OS01,Meteorological Station / Equipment,OS
-OS02,Radar / Satellite Infrastructure,OS
-OS03,Telescope / Observation Infrastructure / Astronomy,OS
-OT,Transport Support,O
-OT01,Cattle Grid / Ford,OT
-OT02,Elevator / Escalator / Steps,OT
-OT03,Footbridge / Walkway,OT
-OT04,Pole / Post / Bollard (Restricting Vehicular Access),OT
-OT05,Subway / Underpass,OT
-OT06,Customs Inspection Facility,OT
-OT07,Lay-By,OT
-OT08,Level Crossing,OT
-OT09,Mail Pick Up,OT
-OT10,Railway Pedestrian Crossing,OT
-OT11,Railway Buffer,OT
-OT12,Rail Drag,OT
-OT13,Rail Infrastructure Services,OT
-OT14,Rail Kilometre Distance Marker,OT
-OT15,Railway Lighting,OT
-OT16,Rail Mile Distance Marker,OT
-OT17,Railway Turntable,OT
-OT18,Rail Weighbridge,OT
-OT19,Rail Signalling,OT
-OT20,Railway Traverse,OT
-OT21,Goods Tramway,OT
-OT22,Road Drag,OT
-OT23,Vehicle Dip,OT
-OT24,Road Turntable,OT
-OT25,Road Mile Distance Marker,OT
-OT26,Road Kilometre Distance Marker,OT
-OT27,Road Infrastructure Services,OT
-OU,Unsupported Site,O
-OU01,Cycle Parking Facility,OU
-OU04,Picnic / Barbeque Site,OU
-OU05,Travelling Persons Site,OU
-OU08,Shelter (Not Including Bus Shelter),OU
-P,Parent Shell,
-PP,Property Shell,P
-PS,Street Record,P
-R,Residential,
-RB,Ancillary Building,R
-RC,Car Park Space,R
-RC01,Allocated Parking,RC
-RD,Dwelling,R
-RD01,Caravan,RD
-RD02,Detached,RD
-RD03,Semi-Detached,RD
-RD04,Terraced,RD
-RD06,Self Contained Flat (Includes Maisonette / Apartment),RD
-RD07,House Boat,RD
-RD08,Sheltered Accommodation,RD
-RD10,Privately Owned Holiday Caravan / Chalet,RD
-RG,Garage,R
-RG02,Lock-Up Garage / Garage Court,RG
-RH,House In Multiple Occupation,R
-RH01,HMO Parent,RH
-RH02,HMO Bedsit / Other Non Self Contained Accommodation,RH
-RH03,HMO Not Further Divided,RH
-RI,Residential Institution,R
-RI01,Care / Nursing Home,RI
-RI02,Communal Residence,RI
-RI02NC,Non-Commercial Lodgings,RI02
-RI02RC,Religious Community,RI02
-RI03,Residential Education,RI
-U,Unclassified,
-UC,Awaiting Classification,U
-UP,Pending Internal Investigation,U
-X,Dual Use,
-Z,Object of Interest,
-ZA,Archaeological Dig Site,Z
-ZM,Monument,Z
-ZM01,Obelisk / Milestone / Standing Stone,ZM
-ZM01OB,Obelisk,ZM01
-ZM01ST,Standing Stone,ZM01
-ZM02,Memorial / Market Cross,ZM
-ZM03,Statue,ZM
-ZM04,Castle / Historic Ruin,ZM
-ZM05,Other Structure,ZM
-ZM05BS,Boundary Stone,ZM05
-ZM05CE,Cascade / Fountain,ZM05
-ZM05PN,Permanent Art Display / Sculpture,ZM05
-ZM05WI,Windmill (Inactive),ZM05
-ZS,Stately Home,Z
-ZU,Underground Feature,Z
-ZU01,Cave,ZU
-ZU04,Pothole / Natural Hole,ZU
-ZV,Other Underground Feature,Z
-ZV01,Cellar,ZV
-ZV02,Disused Mine,ZV
-ZV02MI,Mineral Mining / Inactive,ZV02
-ZV02OI,Oil And / Gas Extraction/ Inactive,ZV02
-ZV02QI,Mineral Quarrying And / Open Extraction / Inactive,ZV02
-ZV03,Well / Spring,ZV
-ZV03SG,Spring,ZV03
-ZV03WL,Well,ZV03
-ZW,Place Of Worship,Z
-ZW99AB,Abbey,ZW
-ZW99CA,Cathedral,ZW
-ZW99CH,Church,ZW
-ZW99CP,Chapel,ZW
-ZW99GU,Gurdwara,ZW
-ZW99KH,Kingdom Hall,ZW
-ZW99LG,Lych Gate,ZW
-ZW99MQ,Mosque,ZW
-ZW99MT,Minster,ZW
-ZW99SU,Stupa,ZW
-ZW99SY,Synagogue,ZW
-ZW99TP,Temple,ZW
+CLASS_SCHEME,CLASSIFICATION_CODE,DESCRIPTION,PARENT
+AddressBase Premium Classification Scheme,C,Commercial,
+AddressBase Premium Classification Scheme,CA,Agricultural,C
+AddressBase Premium Classification Scheme,CA01,Farm / Non-Residential Associated Building,CA
+AddressBase Premium Classification Scheme,CA02,Fishery,CA
+AddressBase Premium Classification Scheme,CA02FF,Fish Farming,CA02
+AddressBase Premium Classification Scheme,CA02FH,Fish Hatchery,CA02
+AddressBase Premium Classification Scheme,CA02FP,Fish Processing,CA02
+AddressBase Premium Classification Scheme,CA02OY,Oyster / Mussel Bed,CA02
+AddressBase Premium Classification Scheme,CA03,Horticulture,CA
+AddressBase Premium Classification Scheme,CA03SH,Smallholding,CA03
+AddressBase Premium Classification Scheme,CA03VY,Vineyard,CA03
+AddressBase Premium Classification Scheme,CA03WB,Watercress Bed,CA03
+AddressBase Premium Classification Scheme,CA04,Slaughter House / Abattoir,CA
+AddressBase Premium Classification Scheme,CB,Ancillary Building,C
+AddressBase Premium Classification Scheme,CC,Community Services,C
+AddressBase Premium Classification Scheme,CC02,Law Court,CC
+AddressBase Premium Classification Scheme,CC03,Prison,CC
+AddressBase Premium Classification Scheme,CC03HD,HM Detention Centre,CC03
+AddressBase Premium Classification Scheme,CC03PR,HM Prison Service,CC03
+AddressBase Premium Classification Scheme,CC03SC,Secure Residential Accommodation,CC03
+AddressBase Premium Classification Scheme,CC04,Public / Village Hall / Other Community Facility,CC
+AddressBase Premium Classification Scheme,CC04YR,Youth Recreational / Social Club,CC04
+AddressBase Premium Classification Scheme,CC05,Public Convenience,CC
+AddressBase Premium Classification Scheme,CC06,Cemetery / Crematorium / Graveyard. In Current Use.,CC
+AddressBase Premium Classification Scheme,CC06CB,Columbarium,CC06
+AddressBase Premium Classification Scheme,CC06CN,Crematorium,CC06
+AddressBase Premium Classification Scheme,CC06CR,Chapel Of Rest,CC06
+AddressBase Premium Classification Scheme,CC06CY,Cemetery,CC06
+AddressBase Premium Classification Scheme,CC06MC,Military Cemetery,CC06
+AddressBase Premium Classification Scheme,CC06MY,Mortuary,CC06
+AddressBase Premium Classification Scheme,CC07,Church Hall / Religious Meeting Place / Hall,CC
+AddressBase Premium Classification Scheme,CC08,Community Service Centre / Office,CC
+AddressBase Premium Classification Scheme,CC09,Public Household Waste Recycling Centre (HWRC),CC
+AddressBase Premium Classification Scheme,CC10,Recycling Site,CC
+AddressBase Premium Classification Scheme,CC11,CCTV,CC
+AddressBase Premium Classification Scheme,CC12,Job Centre,CC
+AddressBase Premium Classification Scheme,CE,Education,C
+AddressBase Premium Classification Scheme,CE01,College,CE
+AddressBase Premium Classification Scheme,CE01FE,Further Education,CE01
+AddressBase Premium Classification Scheme,CE01HE,Higher Education,CE01
+AddressBase Premium Classification Scheme,CE02,Children’s Nursery / Crèche,CE
+AddressBase Premium Classification Scheme,CE03,Preparatory / First / Primary / Infant / Junior / Middle School,CE
+AddressBase Premium Classification Scheme,CE03FS,First School,CE03
+AddressBase Premium Classification Scheme,CE03IS,Infant School,CE03
+AddressBase Premium Classification Scheme,CE03JS,Junior School,CE03
+AddressBase Premium Classification Scheme,CE03MS,Middle School,CE03
+AddressBase Premium Classification Scheme,CE03NP,Non State Primary / Preparatory School,CE03
+AddressBase Premium Classification Scheme,CE03PS,Primary School,CE03
+AddressBase Premium Classification Scheme,CE04,Secondary / High School,CE
+AddressBase Premium Classification Scheme,CE04NS,Non State Secondary School,CE04
+AddressBase Premium Classification Scheme,CE04SS,Secondary School,CE04
+AddressBase Premium Classification Scheme,CE05,University,CE
+AddressBase Premium Classification Scheme,CE06,Special Needs Establishment.,CE
+AddressBase Premium Classification Scheme,CE07,Other Educational Establishment,CE
+AddressBase Premium Classification Scheme,CH,Hotel / Motel / Boarding / Guest House,C
+AddressBase Premium Classification Scheme,CH01,Boarding / Guest House / Bed And Breakfast / Youth Hostel,CH
+AddressBase Premium Classification Scheme,CH01YH,Youth Hostel,CH01
+AddressBase Premium Classification Scheme,CH02,Holiday Let/Accomodation/Short-Term Let Other Than CH01,CH
+AddressBase Premium Classification Scheme,CH03,Hotel/Motel,CH
+AddressBase Premium Classification Scheme,CI,"Industrial Applicable to manufacturing, engineering, maintenance, storage / wholesale distribution and extraction sites",C
+AddressBase Premium Classification Scheme,CI01,Factory/Manufacturing,CI
+AddressBase Premium Classification Scheme,CI01AW,Aircraft Works,CI01
+AddressBase Premium Classification Scheme,CI01BB,Boat Building,CI01
+AddressBase Premium Classification Scheme,CI01BR,Brick Works,CI01
+AddressBase Premium Classification Scheme,CI01BW,Brewery,CI01
+AddressBase Premium Classification Scheme,CI01CD,Cider Manufacture,CI01
+AddressBase Premium Classification Scheme,CI01CM,Chemical Works,CI01
+AddressBase Premium Classification Scheme,CI01CW,Cement Works,CI01
+AddressBase Premium Classification Scheme,CI01DA,Dairy Processing,CI01
+AddressBase Premium Classification Scheme,CI01DY,Distillery,CI01
+AddressBase Premium Classification Scheme,CI01FL,Flour Mill,CI01
+AddressBase Premium Classification Scheme,CI01FO,Food Processing,CI01
+AddressBase Premium Classification Scheme,CI01GW,Glassworks,CI01
+AddressBase Premium Classification Scheme,CI01MG,Manufacturing,CI01
+AddressBase Premium Classification Scheme,CI01OH,Oast House,CI01
+AddressBase Premium Classification Scheme,CI01OR,Oil Refining,CI01
+AddressBase Premium Classification Scheme,CI01PG,Pottery Manufacturing,CI01
+AddressBase Premium Classification Scheme,CI01PM,Paper Mill,CI01
+AddressBase Premium Classification Scheme,CI01PW,Printing Works,CI01
+AddressBase Premium Classification Scheme,CI01SR,Sugar Refinery,CI01
+AddressBase Premium Classification Scheme,CI01SW,Steel Works,CI01
+AddressBase Premium Classification Scheme,CI01TL,Timber Mill,CI01
+AddressBase Premium Classification Scheme,CI01WN,Winery,CI01
+AddressBase Premium Classification Scheme,CI01YD,Shipyard,CI01
+AddressBase Premium Classification Scheme,CI02,Mineral / Ore Working / Quarry / Mine,CI
+AddressBase Premium Classification Scheme,CI02MA,Mineral Mining / Active,CI02
+AddressBase Premium Classification Scheme,CI02MD,Mineral Distribution / Storage,CI02
+AddressBase Premium Classification Scheme,CI02MP,Mineral Processing,CI02
+AddressBase Premium Classification Scheme,CI02OA,Oil / Gas Extraction / Active,CI02
+AddressBase Premium Classification Scheme,CI02QA,Mineral Quarrying / Open Extraction / Active,CI02
+AddressBase Premium Classification Scheme,CI03,Workshop / Light Industrial,CI
+AddressBase Premium Classification Scheme,CI03GA,Servicing Garage,CI03
+AddressBase Premium Classification Scheme,CI04,Warehouse / Store / Storage Depot,CI
+AddressBase Premium Classification Scheme,CI04CS,Crop Handling / Storage,CI04
+AddressBase Premium Classification Scheme,CI04PL,Postal Sorting / Distribution,CI04
+AddressBase Premium Classification Scheme,CI04SO,Solid Fuel Storage,CI04
+AddressBase Premium Classification Scheme,CI04TS,Timber Storage,CI04
+AddressBase Premium Classification Scheme,CI05,Wholesale Distribution,CI
+AddressBase Premium Classification Scheme,CI05SF,Solid Fuel Distribution,CI05
+AddressBase Premium Classification Scheme,CI05TD,Timber Distribution,CI05
+AddressBase Premium Classification Scheme,CI06,Recycling Plant,CI
+AddressBase Premium Classification Scheme,CI07,Incinerator / Waste Transfer Station,CI
+AddressBase Premium Classification Scheme,CI08,Maintenance Depot,CI
+AddressBase Premium Classification Scheme,CL,Leisure - Applicable to recreational sites and enterprises,C
+AddressBase Premium Classification Scheme,CL01,Amusements,CL
+AddressBase Premium Classification Scheme,CL01LP,Leisure Pier,CL01
+AddressBase Premium Classification Scheme,CL02,Holiday / Campsite,CL
+AddressBase Premium Classification Scheme,CL02CG,Camping,CL02
+AddressBase Premium Classification Scheme,CL02CV,Caravanning,CL02
+AddressBase Premium Classification Scheme,CL02HA,Holiday Accommodation,CL02
+AddressBase Premium Classification Scheme,CL02HO,Holiday Centre,CL02
+AddressBase Premium Classification Scheme,CL02YC,Youth Organisation Camp,CL02
+AddressBase Premium Classification Scheme,CL03,Library,CL
+AddressBase Premium Classification Scheme,CL03RR,Reading Room,CL03
+AddressBase Premium Classification Scheme,CL04,Museum / Gallery,CL
+AddressBase Premium Classification Scheme,CL04AC,Art Centre / Gallery,CL04
+AddressBase Premium Classification Scheme,CL04AM,Aviation Museum,CL04
+AddressBase Premium Classification Scheme,CL04HG,Heritage Centre,CL04
+AddressBase Premium Classification Scheme,CL04IM,Industrial Museum,CL04
+AddressBase Premium Classification Scheme,CL04MM,Military Museum,CL04
+AddressBase Premium Classification Scheme,CL04NM,Maritime Museum,CL04
+AddressBase Premium Classification Scheme,CL04SM,Science Museum,CL04
+AddressBase Premium Classification Scheme,CL04TM,Transport Museum,CL04
+AddressBase Premium Classification Scheme,CL06,Indoor / Outdoor Leisure / Sporting Activity / Centre,CL
+AddressBase Premium Classification Scheme,CL06AH,Athletics Facility,CL06
+AddressBase Premium Classification Scheme,CL06BF,Bowls Facility,CL06
+AddressBase Premium Classification Scheme,CL06CK,Cricket Facility,CL06
+AddressBase Premium Classification Scheme,CL06CU,Curling Facility,CL06
+AddressBase Premium Classification Scheme,CL06DS,Diving / Swimming Facility,CL06
+AddressBase Premium Classification Scheme,CL06EQ,Equestrian Sports Facility,CL06
+AddressBase Premium Classification Scheme,CL06FB,Football Facility,CL06
+AddressBase Premium Classification Scheme,CL06FI,Fishing / Angling Facility,CL06
+AddressBase Premium Classification Scheme,CL06GF,Golf Facility,CL06
+AddressBase Premium Classification Scheme,CL06GL,Gliding Facility,CL06
+AddressBase Premium Classification Scheme,CL06GR,Greyhound Racing Facility,CL06
+AddressBase Premium Classification Scheme,CL06HF,Hockey Facility,CL06
+AddressBase Premium Classification Scheme,CL06HR,Horse Racing Facility,CL06
+AddressBase Premium Classification Scheme,CL06HV,Historic Vessel / Aircraft / Vehicle,CL06
+AddressBase Premium Classification Scheme,CL06LS,Activity / Leisure / Sports Centre,CL06
+AddressBase Premium Classification Scheme,CL06ME,Model Sports Facility,CL06
+AddressBase Premium Classification Scheme,CL06MF,Motor Sports Facility,CL06
+AddressBase Premium Classification Scheme,CL06PF,Playing Field,CL06
+AddressBase Premium Classification Scheme,CL06QS,Racquet Sports Facility,CL06
+AddressBase Premium Classification Scheme,CL06RF,Rugby Facility,CL06
+AddressBase Premium Classification Scheme,CL06RG,Recreation Ground,CL06
+AddressBase Premium Classification Scheme,CL06SI,Shinty Facility,CL06
+AddressBase Premium Classification Scheme,CL06SK,Skateboarding Facility,CL06
+AddressBase Premium Classification Scheme,CL06SX,Civilian Firing Facility,CL06
+AddressBase Premium Classification Scheme,CL06TB,Tenpin Bowling Facility,CL06
+AddressBase Premium Classification Scheme,CL06TN,Public Tennis Court,CL06
+AddressBase Premium Classification Scheme,CL06WA,Water Sports Facility,CL06
+AddressBase Premium Classification Scheme,CL06WP,Winter Sports Facility,CL06
+AddressBase Premium Classification Scheme,CL06WY,Wildlife Sports Facility,CL06
+AddressBase Premium Classification Scheme,CL06YF,Cycling Sports Facility,CL06
+AddressBase Premium Classification Scheme,CL07,Bingo Hall / Cinema / Conference / Exhibition Centre / Theatre / Concert Hall,CL
+AddressBase Premium Classification Scheme,CL07CI,Cinema,CL07
+AddressBase Premium Classification Scheme,CL07EN,Entertainment Complex,CL07
+AddressBase Premium Classification Scheme,CL07EX,Conference / Exhibition Centre,CL07
+AddressBase Premium Classification Scheme,CL07TH,Theatre,CL07
+AddressBase Premium Classification Scheme,CL08,Zoo / Theme Park,CL
+AddressBase Premium Classification Scheme,CL08AK,Amusement Park,CL08
+AddressBase Premium Classification Scheme,CL08AQ,Aquatic Attraction,CL08
+AddressBase Premium Classification Scheme,CL08MX,Model Village Site,CL08
+AddressBase Premium Classification Scheme,CL08WZ,Wildlife / Zoological Park,CL08
+AddressBase Premium Classification Scheme,CL09,"Beach Hut (Recreational, Non-Residential Use Only)",CL
+AddressBase Premium Classification Scheme,CL10,Licensed Private Members’ Club,CL
+AddressBase Premium Classification Scheme,CL10RE,Recreational / Social Club,CL10
+AddressBase Premium Classification Scheme,CL11,Arena / Stadium,CL
+AddressBase Premium Classification Scheme,CL11SD,Stadium,CL11
+AddressBase Premium Classification Scheme,CL11SJ,Showground,CL11
+AddressBase Premium Classification Scheme,CM,Medical,C
+AddressBase Premium Classification Scheme,CM01,Dentist,CM
+AddressBase Premium Classification Scheme,CM02,General Practice Surgery / Clinic,CM
+AddressBase Premium Classification Scheme,CM02HC,Health Centre,CM02
+AddressBase Premium Classification Scheme,CM02HL,Health Care Services,CM02
+AddressBase Premium Classification Scheme,CM03,Hospital / Hospice,CM
+AddressBase Premium Classification Scheme,CM03HI,Hospice,CM03
+AddressBase Premium Classification Scheme,CM03HP,Hospital,CM03
+AddressBase Premium Classification Scheme,CM04,Medical / Testing / Research Laboratory,CM
+AddressBase Premium Classification Scheme,CM05,Professional Medical Service,CM
+AddressBase Premium Classification Scheme,CM05ZS,Assessment / Development Services,CM05
+AddressBase Premium Classification Scheme,CM06,Pharmacy,CM
+AddressBase Premium Classification Scheme,CN,Animal Centre,C
+AddressBase Premium Classification Scheme,CN01,Cattery / Kennel,CN
+AddressBase Premium Classification Scheme,CN02,Animal Services,CN
+AddressBase Premium Classification Scheme,CN02AX,Animal Quarantining,CN02
+AddressBase Premium Classification Scheme,CN03,Equestrian,CN
+AddressBase Premium Classification Scheme,CN03HB,Horse Racing / Breeding Stable,CN03
+AddressBase Premium Classification Scheme,CN03SB,Commercial Stabling / Riding,CN03
+AddressBase Premium Classification Scheme,CN04,Vet / Animal Medical Treatment,CN
+AddressBase Premium Classification Scheme,CN05,Animal / Bird / Marine Sanctuary,CN
+AddressBase Premium Classification Scheme,CN05AN,Animal Sanctuary,CN05
+AddressBase Premium Classification Scheme,CN05MR,Marine Sanctuary,CN05
+AddressBase Premium Classification Scheme,CO,Office,C
+AddressBase Premium Classification Scheme,CO01,Office / Work Studio,CO
+AddressBase Premium Classification Scheme,CO01EM,"Embassy /, High Commission / Consulate",CO01
+AddressBase Premium Classification Scheme,CO01FM,Film Studio,CO01
+AddressBase Premium Classification Scheme,CO01GV,Central Government Service,CO01
+AddressBase Premium Classification Scheme,CO01LG,Local Government Service,CO01
+AddressBase Premium Classification Scheme,CO02,Broadcasting (TV / Radio),CO
+AddressBase Premium Classification Scheme,CR,Retail,C
+AddressBase Premium Classification Scheme,CR01,Bank / Financial Service,CR
+AddressBase Premium Classification Scheme,CR02,Retail Service Agent,CR
+AddressBase Premium Classification Scheme,CR02EV,Electric Car Charging Station,CR02
+AddressBase Premium Classification Scheme,CR02PO,Post Office,CR02
+AddressBase Premium Classification Scheme,CR04,Market (Indoor / Outdoor),CR
+AddressBase Premium Classification Scheme,CR04FK,Fish Market,CR04
+AddressBase Premium Classification Scheme,CR04FV,Fruit / Vegetable Market,CR04
+AddressBase Premium Classification Scheme,CR04LV,Livestock Market,CR04
+AddressBase Premium Classification Scheme,CR05,Petrol Filling Station,CR
+AddressBase Premium Classification Scheme,CR06,Public House / Bar / Nightclub,CR
+AddressBase Premium Classification Scheme,CR06BA,Bar,CR06
+AddressBase Premium Classification Scheme,CR06NC,Nightclub,CR06
+AddressBase Premium Classification Scheme,CR06PH,Public House,CR06
+AddressBase Premium Classification Scheme,CR07,Restaurant / Cafeteria,CR
+AddressBase Premium Classification Scheme,CR08,Shop / Showroom,CR
+AddressBase Premium Classification Scheme,CR08CS,Convenience Store,CR08
+AddressBase Premium Classification Scheme,CR08GC,Garden Centre,CR08
+AddressBase Premium Classification Scheme,CR08SM,Supermarket,CR08
+AddressBase Premium Classification Scheme,CR09,Other Licensed Premise / Vendor,CR
+AddressBase Premium Classification Scheme,CR09BS,Betting Shop,CR09
+AddressBase Premium Classification Scheme,CR09OL,Off-licence,CR09
+AddressBase Premium Classification Scheme,CR10,Fast Food Outlet / Takeaway (Hot / Cold),CR
+AddressBase Premium Classification Scheme,CR11,Automated Teller Machine (ATM),CR
+AddressBase Premium Classification Scheme,CS,Storage Land,C
+AddressBase Premium Classification Scheme,CS01,General Storage Land,CS
+AddressBase Premium Classification Scheme,CS02,Builders’ Yard,CS
+AddressBase Premium Classification Scheme,CT,Transport,C
+AddressBase Premium Classification Scheme,CT01,Airfield / Airstrip / Airport / Air Transport Infrastructure Facility,CT
+AddressBase Premium Classification Scheme,CT01AF,Airfield,CT01
+AddressBase Premium Classification Scheme,CT01AI,Air Transport Infrastructure Services,CT01
+AddressBase Premium Classification Scheme,CT01AP,Airport,CT01
+AddressBase Premium Classification Scheme,CT01AY,Air Passenger Terminal,CT01
+AddressBase Premium Classification Scheme,CT01HS,Helicopter Station,CT01
+AddressBase Premium Classification Scheme,CT01HT,Heliport / Helipad,CT01
+AddressBase Premium Classification Scheme,CT02,Bus Shelter,CT
+AddressBase Premium Classification Scheme,CT03,Car / Coach / Commercial Vehicle / Taxi Parking / Park And Ride Site,CT
+AddressBase Premium Classification Scheme,CT03PK,Public Park And Ride,CT03
+AddressBase Premium Classification Scheme,CT03PP,Public Car Parking,CT03
+AddressBase Premium Classification Scheme,CT03PU,Public Coach Parking,CT03
+AddressBase Premium Classification Scheme,CT03VP,Public Commercial Vehicle Parking,CT03
+AddressBase Premium Classification Scheme,CT04,Goods Freight Handling / Terminal,CT
+AddressBase Premium Classification Scheme,CT04AE,Air Freight Terminal,CT04
+AddressBase Premium Classification Scheme,CT04CF,Container Freight,CT04
+AddressBase Premium Classification Scheme,CT04RH,Road Freight Transport,CT04
+AddressBase Premium Classification Scheme,CT04RT,Rail Freight Transport,CT04
+AddressBase Premium Classification Scheme,CT05,Marina,CT
+AddressBase Premium Classification Scheme,CT06,Mooring,CT
+AddressBase Premium Classification Scheme,CT07,Railway Asset,CT
+AddressBase Premium Classification Scheme,CT08,Station / Interchange / Terminal / Halt,CT
+AddressBase Premium Classification Scheme,CT08BC,Bus / Coach Station,CT08
+AddressBase Premium Classification Scheme,CT08RS,Railway Station,CT08
+AddressBase Premium Classification Scheme,CT08VH,Vehicular Rail Terminal,CT08
+AddressBase Premium Classification Scheme,CT09,Transport Track / Way,CT
+AddressBase Premium Classification Scheme,CT09CL,Cliff Railway,CT09
+AddressBase Premium Classification Scheme,CT09CX,Chair Lift / Cable Car / Ski Tow,CT09
+AddressBase Premium Classification Scheme,CT09MO,Monorail,CT09
+AddressBase Premium Classification Scheme,CT10,Vehicle Storage,CT
+AddressBase Premium Classification Scheme,CT10BG,Boat Storage,CT10
+AddressBase Premium Classification Scheme,CT10BU,Bus / Coach Depot,CT10
+AddressBase Premium Classification Scheme,CT11,Transport Related Infrastructure,CT
+AddressBase Premium Classification Scheme,CT11AD,Aqueduct,CT11
+AddressBase Premium Classification Scheme,CT11CA,Road Bridge Over Canal,CT11
+AddressBase Premium Classification Scheme,CT11LK,Lock,CT11
+AddressBase Premium Classification Scheme,CT11MU,Road Bridge Over Multiple,CT11
+AddressBase Premium Classification Scheme,CT11NN,Road Bridge Over No Network,CT11
+AddressBase Premium Classification Scheme,CT11PA,Road Bridge Over Path,CT11
+AddressBase Premium Classification Scheme,CT11RA,Road Bridge Over Railway,CT11
+AddressBase Premium Classification Scheme,CT11RO,Road Bridge Over Road,CT11
+AddressBase Premium Classification Scheme,CT11WA,Road Bridge Over Water,CT11
+AddressBase Premium Classification Scheme,CT11WE,Weir,CT11
+AddressBase Premium Classification Scheme,CT11WG,Weighbridge / Load Gauge,CT11
+AddressBase Premium Classification Scheme,CT12,Overnight Lorry Park,CT
+AddressBase Premium Classification Scheme,CT13,Harbour / Port / Dock / Dockyard / Slipway / Landing Stage / Pier / Jetty / Pontoon / Terminal / Berthing / Quay,CT
+AddressBase Premium Classification Scheme,CT13FR,Passenger Ferry Terminal,CT13
+AddressBase Premium Classification Scheme,CT13NB,Non-Tanker Nautical Berthing,CT13
+AddressBase Premium Classification Scheme,CT13NF,Nautical Refuelling Facility,CT13
+AddressBase Premium Classification Scheme,CT13SA,Slipway,CT13
+AddressBase Premium Classification Scheme,CT13SP,Ship Passenger Terminal,CT13
+AddressBase Premium Classification Scheme,CT13TK,Tanker Berthing,CT13
+AddressBase Premium Classification Scheme,CT13VF,Vehicular Ferry Terminal,CT13
+AddressBase Premium Classification Scheme,CU,Utility,C
+AddressBase Premium Classification Scheme,CU01,Electricity Sub-Station,CU
+AddressBase Premium Classification Scheme,CU02,Landfill,CU
+AddressBase Premium Classification Scheme,CU03,Power Station / Energy Production,CU
+AddressBase Premium Classification Scheme,CU03ED,Electricity Distribution Facility,CU03
+AddressBase Premium Classification Scheme,CU03EP,Electricity Production Facility,CU03
+AddressBase Premium Classification Scheme,CU03WF,Wind Farm,CU03
+AddressBase Premium Classification Scheme,CU03WU,Wind Turbine,CU03
+AddressBase Premium Classification Scheme,CU04,Pump House / Pumping Station / Water Tower,CU
+AddressBase Premium Classification Scheme,CU04WC,Water Controlling / Pumping,CU04
+AddressBase Premium Classification Scheme,CU04WD,Water Distribution / Pumping,CU04
+AddressBase Premium Classification Scheme,CU04WM,Water Quality Monitoring,CU04
+AddressBase Premium Classification Scheme,CU04WS,Water Storage,CU04
+AddressBase Premium Classification Scheme,CU04WW,Waste Water Distribution / Pumping,CU04
+AddressBase Premium Classification Scheme,CU06,Telecommunication,CU
+AddressBase Premium Classification Scheme,CU06TE,Telecommunications Mast,CU06
+AddressBase Premium Classification Scheme,CU06TX,Telephone Exchange,CU06
+AddressBase Premium Classification Scheme,CU07,Water / Waste Water / Sewage Treatment Works,CU
+AddressBase Premium Classification Scheme,CU07WR,Waste Water Treatment,CU07
+AddressBase Premium Classification Scheme,CU07WT,Water Treatment,CU07
+AddressBase Premium Classification Scheme,CU08,Gas / Oil Storage / Distribution,CU
+AddressBase Premium Classification Scheme,CU08GG,Gas Governor,CU08
+AddressBase Premium Classification Scheme,CU08GH,Gas Holder,CU08
+AddressBase Premium Classification Scheme,CU08OT,Oil Terminal,CU08
+AddressBase Premium Classification Scheme,CU09,Other Utility Use,CU
+AddressBase Premium Classification Scheme,CU09CQ,Cable Terminal Station,CU09
+AddressBase Premium Classification Scheme,CU09OV,Observatory,CU09
+AddressBase Premium Classification Scheme,CU09RA,Radar Station,CU09
+AddressBase Premium Classification Scheme,CU09SE,Satellite Earth Station,CU09
+AddressBase Premium Classification Scheme,CU10,Waste Management,CU
+AddressBase Premium Classification Scheme,CU11,Telephone Box,CU
+AddressBase Premium Classification Scheme,CU11OP,Other Public Telephones,CU11
+AddressBase Premium Classification Scheme,CU12,Dam,CU
+AddressBase Premium Classification Scheme,CX,Emergency / Rescue Service,C
+AddressBase Premium Classification Scheme,CX01,Police / Transport Police / Station,CX
+AddressBase Premium Classification Scheme,CX01PT,Police Training,CX01
+AddressBase Premium Classification Scheme,CX02,Fire Station,CX
+AddressBase Premium Classification Scheme,CX02FT,Fire Service Training,CX02
+AddressBase Premium Classification Scheme,CX03,Ambulance Station,CX
+AddressBase Premium Classification Scheme,CX03AA,Air Sea Rescue / Air Ambulance,CX03
+AddressBase Premium Classification Scheme,CX04,Lifeboat Services / Station,CX
+AddressBase Premium Classification Scheme,CX05,Coastguard Rescue / Lookout / Station,CX
+AddressBase Premium Classification Scheme,CX06,Mountain Rescue Station,CX
+AddressBase Premium Classification Scheme,CX07,Lighthouse,CX
+AddressBase Premium Classification Scheme,CX08,Police Box / Kiosk,CX
+AddressBase Premium Classification Scheme,CZ,Information,C
+AddressBase Premium Classification Scheme,CZ01,Advertising Hoarding,CZ
+AddressBase Premium Classification Scheme,CZ02,Tourist Information Signage,CZ
+AddressBase Premium Classification Scheme,CZ02VI,Visitor Information,CZ02
+AddressBase Premium Classification Scheme,CZ03,Traffic Information Signage,CZ
+AddressBase Premium Classification Scheme,L,Land,
+AddressBase Premium Classification Scheme,LA,Agricultural - Applicable to land in farm ownership and not run as a separate business enterprise,L
+AddressBase Premium Classification Scheme,LA01,Grazing Land,LA
+AddressBase Premium Classification Scheme,LA02,Permanent Crop / Crop Rotation,LA
+AddressBase Premium Classification Scheme,LA02OC,Orchard,LA02
+AddressBase Premium Classification Scheme,LB,Ancillary Building,L
+AddressBase Premium Classification Scheme,LB99AV,Aviary / Dovecot / Cage,LB
+AddressBase Premium Classification Scheme,LB99BD,Bandstand,LB
+AddressBase Premium Classification Scheme,LB99PI,Pavilion / Changing Room,LB
+AddressBase Premium Classification Scheme,LB99SV,Sports Viewing Structure,LB
+AddressBase Premium Classification Scheme,LC,Burial Ground,L
+AddressBase Premium Classification Scheme,LC01,Historic / Disused Cemetery / Graveyard,LC
+AddressBase Premium Classification Scheme,LD,Development,L
+AddressBase Premium Classification Scheme,LD01,Development Site,LD
+AddressBase Premium Classification Scheme,LD01CC,Commercial Construction Site,LD01
+AddressBase Premium Classification Scheme,LD01CO,Community Construction Site,LD01
+AddressBase Premium Classification Scheme,LD01RN,Residential Construction Site,LD01
+AddressBase Premium Classification Scheme,LD01TC,Transport Construction Site,LD01
+AddressBase Premium Classification Scheme,LF,Forestry,L
+AddressBase Premium Classification Scheme,LF02,Forest / Arboretum / Pinetum (Managed / Unmanaged),LF
+AddressBase Premium Classification Scheme,LF02AU,Arboretum,LF02
+AddressBase Premium Classification Scheme,LF03,Woodland,LF
+AddressBase Premium Classification Scheme,LL,Allotment,L
+AddressBase Premium Classification Scheme,LM,Amenity - Open areas not attracting visitors,L
+AddressBase Premium Classification Scheme,LM01,Landscaped Roundabout,LM
+AddressBase Premium Classification Scheme,LM02,Verge / Central Reservation,LM
+AddressBase Premium Classification Scheme,LM02NV,Natural Central Reservation,LM02
+AddressBase Premium Classification Scheme,LM02VE,Natural Verge,LM02
+AddressBase Premium Classification Scheme,LM03,Maintained Amenity Land,LM
+AddressBase Premium Classification Scheme,LM04,Maintained Surfaced Area,LM
+AddressBase Premium Classification Scheme,LM04MV,Made Central Reservation,LM04
+AddressBase Premium Classification Scheme,LM04PV,Pavement,LM04
+AddressBase Premium Classification Scheme,LO,Open Space,L
+AddressBase Premium Classification Scheme,LO01,Heath / Moorland,LO
+AddressBase Premium Classification Scheme,LP,Park,L
+AddressBase Premium Classification Scheme,LP01,Public Park / Garden,LP
+AddressBase Premium Classification Scheme,LP02,Public Open Space / Nature Reserve,LP
+AddressBase Premium Classification Scheme,LP03,Playground,LP
+AddressBase Premium Classification Scheme,LP03PA,Play Area,LP03
+AddressBase Premium Classification Scheme,LP03PD,Paddling Pool,LP03
+AddressBase Premium Classification Scheme,LP04,Private Park / Garden,LP
+AddressBase Premium Classification Scheme,LU,Unused Land,L
+AddressBase Premium Classification Scheme,LU01,Vacant / Derelict Land,LU
+AddressBase Premium Classification Scheme,LW,Water,L
+AddressBase Premium Classification Scheme,LW01,Lake / Reservoir,LW
+AddressBase Premium Classification Scheme,LW01BP,Balancing Pond,LW01
+AddressBase Premium Classification Scheme,LW01BV,Buried Reservoir,LW01
+AddressBase Premium Classification Scheme,LW02,Named Pond,LW
+AddressBase Premium Classification Scheme,LW02DE,Dew Pond,LW02
+AddressBase Premium Classification Scheme,LW02DP,Decoy Pond,LW02
+AddressBase Premium Classification Scheme,LW02IW,Static Water,LW02
+AddressBase Premium Classification Scheme,LW03,Waterway,LW
+AddressBase Premium Classification Scheme,LW03DR,Drain,LW03
+AddressBase Premium Classification Scheme,LW03LR,Leats / Races,LW03
+AddressBase Premium Classification Scheme,M,Military,
+AddressBase Premium Classification Scheme,MA,Army,M
+AddressBase Premium Classification Scheme,MA99AG,Army Military Storage,MA
+AddressBase Premium Classification Scheme,MA99AR,Army Military Range,MA
+AddressBase Premium Classification Scheme,MA99AS,Army Site,MA
+AddressBase Premium Classification Scheme,MA99AT,Army Military Training,MA
+AddressBase Premium Classification Scheme,MB,Ancillary Building,M
+AddressBase Premium Classification Scheme,MB99TG,Military Target,MB
+AddressBase Premium Classification Scheme,MF,Air Force,M
+AddressBase Premium Classification Scheme,MF99UG,Air Force Military Storage,MF
+AddressBase Premium Classification Scheme,MF99UR,Air Force Military Range,MF
+AddressBase Premium Classification Scheme,MF99US,Air Force Site,MF
+AddressBase Premium Classification Scheme,MF99UT,Air Force Military Training,MF
+AddressBase Premium Classification Scheme,MG,Defence Estates,M
+AddressBase Premium Classification Scheme,MN,Navy,M
+AddressBase Premium Classification Scheme,MN99VG,Naval Military Storage,MN
+AddressBase Premium Classification Scheme,MN99VR,Naval Military Range,MN
+AddressBase Premium Classification Scheme,MN99VS,Naval Site,MN
+AddressBase Premium Classification Scheme,MN99VT,Naval Military Training,MN
+AddressBase Premium Classification Scheme,O,Other (Ordnance Survey Only),
+AddressBase Premium Classification Scheme,OA,Aid To Navigation,O
+AddressBase Premium Classification Scheme,OA01,Aid To Aeronautical Navigation,OA
+AddressBase Premium Classification Scheme,OA01AL,Aeronautical Navigation Beacon / Light,OA01
+AddressBase Premium Classification Scheme,OA01LL,Landing Light,OA01
+AddressBase Premium Classification Scheme,OA01SQ,Signal Square,OA01
+AddressBase Premium Classification Scheme,OA01WK,Wind Sock / Wind Tee,OA01
+AddressBase Premium Classification Scheme,OA02,Aid To Nautical Navigation,OA
+AddressBase Premium Classification Scheme,OA02DM,Daymark,OA02
+AddressBase Premium Classification Scheme,OA02FG,Fog Horn Warning,OA02
+AddressBase Premium Classification Scheme,OA02NL,Nautical Navigation Beacon / Light,OA02
+AddressBase Premium Classification Scheme,OA03,Aid To Road Navigation,OA
+AddressBase Premium Classification Scheme,OA03GP,Guide Post,OA03
+AddressBase Premium Classification Scheme,OC,Coastal Protection / Flood Prevention,O
+AddressBase Premium Classification Scheme,OC01,Boulder Wall / Sea Wall,OC
+AddressBase Premium Classification Scheme,OC02,Flood Gate / Flood Sluice Gate / Flood Valve,OC
+AddressBase Premium Classification Scheme,OC03,Groyne,OC
+AddressBase Premium Classification Scheme,OC04,Rip-Rap,OC
+AddressBase Premium Classification Scheme,OE,Emergency Support,O
+AddressBase Premium Classification Scheme,OE01,Beach Office / First Aid Facility,OE
+AddressBase Premium Classification Scheme,OE02,Emergency Telephone (Non Motorway),OE
+AddressBase Premium Classification Scheme,OE03,Fire Alarm Structure / Fire Observation Tower / Fire Beater Facility,OE
+AddressBase Premium Classification Scheme,OE04,Emergency Equipment Point / Emergency Siren / Warning Flag,OE
+AddressBase Premium Classification Scheme,OE05,Lifeguard Facility,OE
+AddressBase Premium Classification Scheme,OE06,LIfe / Belt / Buoy / Float / Jacket / Safety Rope,OE
+AddressBase Premium Classification Scheme,OF,Street Furniture,O
+AddressBase Premium Classification Scheme,OG,Agricultural Support Objects,O
+AddressBase Premium Classification Scheme,OG01,Fish Ladder / Lock / Pen / Trap,OG
+AddressBase Premium Classification Scheme,OG02,Livestock Pen / Dip,OG
+AddressBase Premium Classification Scheme,OG03,Currick,OG
+AddressBase Premium Classification Scheme,OG04,Slurry Bed / Pit,OG
+AddressBase Premium Classification Scheme,OH,Historical Site / Object,O
+AddressBase Premium Classification Scheme,OH01,Historic Structure / Object,OH
+AddressBase Premium Classification Scheme,OI,Industrial Support,O
+AddressBase Premium Classification Scheme,OI01,Adit / Incline / Level,OI
+AddressBase Premium Classification Scheme,OI02,Caisson / Dry Dock / Grid,OI
+AddressBase Premium Classification Scheme,OI03,Channel / Conveyor / Conduit / Pipe,OI
+AddressBase Premium Classification Scheme,OI04,Chimney / Flue,OI
+AddressBase Premium Classification Scheme,OI05,Crane / Hoist / Winch / Material Elevator,OI
+AddressBase Premium Classification Scheme,OI06,Flare Stack,OI
+AddressBase Premium Classification Scheme,OI07,Hopper / Silo / Cistern / Tank,OI
+AddressBase Premium Classification Scheme,OI08,Grab / Skip / Other Industrial Waste Machinery / Discharging,OI
+AddressBase Premium Classification Scheme,OI09,Kiln / Oven / Smelter,OI
+AddressBase Premium Classification Scheme,OI10,Manhole / Shaft,OI
+AddressBase Premium Classification Scheme,OI11,Industrial Overflow / Sluice / Valve / Valve Housing,OI
+AddressBase Premium Classification Scheme,OI12,Cooling Tower,OI
+AddressBase Premium Classification Scheme,OI13,Solar Panel / Waterwheel,OI
+AddressBase Premium Classification Scheme,OI14,Telephone Pole / Post,OI
+AddressBase Premium Classification Scheme,OI15,Electricity Distribution Pole / Pylon,OI
+AddressBase Premium Classification Scheme,ON,Significant Natural Object,O
+AddressBase Premium Classification Scheme,ON01,Boundary / Significant / Historic Tree / Pollard,ON
+AddressBase Premium Classification Scheme,ON02,Boundary / Significant Rock / Boulder,ON
+AddressBase Premium Classification Scheme,ON03,Natural Hole (Blow / Shake / Swallow),ON
+AddressBase Premium Classification Scheme,OO,Ornamental / Cultural Object,O
+AddressBase Premium Classification Scheme,OO02,Mausoleum / Tomb / Grave,OO
+AddressBase Premium Classification Scheme,OO03,Simple Ornamental Object,OO
+AddressBase Premium Classification Scheme,OO04,Maze,OO
+AddressBase Premium Classification Scheme,OP,Sport / Leisure Support,O
+AddressBase Premium Classification Scheme,OP01,Butt / Hide,OP
+AddressBase Premium Classification Scheme,OP02,Gallop / Ride,OP
+AddressBase Premium Classification Scheme,OP03,Miniature Railway,OP
+AddressBase Premium Classification Scheme,OR,Royal Mail Infrastructure,O
+AddressBase Premium Classification Scheme,OR01,Postal Box,OR
+AddressBase Premium Classification Scheme,OR02,Postal Delivery Box / Pouch,OR
+AddressBase Premium Classification Scheme,OR03,PO Box,OR
+AddressBase Premium Classification Scheme,OR04,Additional Mail / Packet Addressee,OR
+AddressBase Premium Classification Scheme,OS,Scientific / Observation Support,O
+AddressBase Premium Classification Scheme,OS01,Meteorological Station / Equipment,OS
+AddressBase Premium Classification Scheme,OS02,Radar / Satellite Infrastructure,OS
+AddressBase Premium Classification Scheme,OS03,Telescope / Observation Infrastructure / Astronomy,OS
+AddressBase Premium Classification Scheme,OT,Transport Support,O
+AddressBase Premium Classification Scheme,OT01,Cattle Grid / Ford,OT
+AddressBase Premium Classification Scheme,OT02,Elevator / Escalator / Steps,OT
+AddressBase Premium Classification Scheme,OT03,Footbridge / Walkway,OT
+AddressBase Premium Classification Scheme,OT04,Pole / Post / Bollard (Restricting Vehicular Access),OT
+AddressBase Premium Classification Scheme,OT05,Subway / Underpass,OT
+AddressBase Premium Classification Scheme,OT06,Customs Inspection Facility,OT
+AddressBase Premium Classification Scheme,OT07,Lay-By,OT
+AddressBase Premium Classification Scheme,OT08,Level Crossing,OT
+AddressBase Premium Classification Scheme,OT09,Mail Pick Up,OT
+AddressBase Premium Classification Scheme,OT10,Railway Pedestrian Crossing,OT
+AddressBase Premium Classification Scheme,OT11,Railway Buffer,OT
+AddressBase Premium Classification Scheme,OT12,Rail Drag,OT
+AddressBase Premium Classification Scheme,OT13,Rail Infrastructure Services,OT
+AddressBase Premium Classification Scheme,OT14,Rail Kilometre Distance Marker,OT
+AddressBase Premium Classification Scheme,OT15,Railway Lighting,OT
+AddressBase Premium Classification Scheme,OT16,Rail Mile Distance Marker,OT
+AddressBase Premium Classification Scheme,OT17,Railway Turntable,OT
+AddressBase Premium Classification Scheme,OT18,Rail Weighbridge,OT
+AddressBase Premium Classification Scheme,OT19,Rail Signalling,OT
+AddressBase Premium Classification Scheme,OT20,Railway Traverse,OT
+AddressBase Premium Classification Scheme,OT21,Goods Tramway,OT
+AddressBase Premium Classification Scheme,OT22,Road Drag,OT
+AddressBase Premium Classification Scheme,OT23,Vehicle Dip,OT
+AddressBase Premium Classification Scheme,OT24,Road Turntable,OT
+AddressBase Premium Classification Scheme,OT25,Road Mile Distance Marker,OT
+AddressBase Premium Classification Scheme,OT26,Road Kilometre Distance Marker,OT
+AddressBase Premium Classification Scheme,OT27,Road Infrastructure Services,OT
+AddressBase Premium Classification Scheme,OU,Unsupported Site,O
+AddressBase Premium Classification Scheme,OU01,Cycle Parking Facility,OU
+AddressBase Premium Classification Scheme,OU04,Picnic / Barbeque Site,OU
+AddressBase Premium Classification Scheme,OU05,Travelling Persons Site,OU
+AddressBase Premium Classification Scheme,OU08,Shelter (Not Including Bus Shelter),OU
+AddressBase Premium Classification Scheme,P,Parent Shell,
+AddressBase Premium Classification Scheme,PP,Property Shell,P
+AddressBase Premium Classification Scheme,PS,Street Record,P
+AddressBase Premium Classification Scheme,R,Residential,
+AddressBase Premium Classification Scheme,RB,Ancillary Building,R
+AddressBase Premium Classification Scheme,RC,Car Park Space,R
+AddressBase Premium Classification Scheme,RC01,Allocated Parking,RC
+AddressBase Premium Classification Scheme,RD,Dwelling,R
+AddressBase Premium Classification Scheme,RD01,Caravan,RD
+AddressBase Premium Classification Scheme,RD02,Detached,RD
+AddressBase Premium Classification Scheme,RD03,Semi-Detached,RD
+AddressBase Premium Classification Scheme,RD04,Terraced,RD
+AddressBase Premium Classification Scheme,RD06,Self Contained Flat (Includes Maisonette / Apartment),RD
+AddressBase Premium Classification Scheme,RD07,House Boat,RD
+AddressBase Premium Classification Scheme,RD08,Sheltered Accommodation,RD
+AddressBase Premium Classification Scheme,RD10,Privately Owned Holiday Caravan / Chalet,RD
+AddressBase Premium Classification Scheme,RG,Garage,R
+AddressBase Premium Classification Scheme,RG02,Lock-Up Garage / Garage Court,RG
+AddressBase Premium Classification Scheme,RH,House In Multiple Occupation,R
+AddressBase Premium Classification Scheme,RH01,HMO Parent,RH
+AddressBase Premium Classification Scheme,RH02,HMO Bedsit / Other Non Self Contained Accommodation,RH
+AddressBase Premium Classification Scheme,RH03,HMO Not Further Divided,RH
+AddressBase Premium Classification Scheme,RI,Residential Institution,R
+AddressBase Premium Classification Scheme,RI01,Care / Nursing Home,RI
+AddressBase Premium Classification Scheme,RI02,Communal Residence,RI
+AddressBase Premium Classification Scheme,RI02NC,Non-Commercial Lodgings,RI02
+AddressBase Premium Classification Scheme,RI02RC,Religious Community,RI02
+AddressBase Premium Classification Scheme,RI03,Residential Education,RI
+AddressBase Premium Classification Scheme,U,Unclassified,
+AddressBase Premium Classification Scheme,UC,Awaiting Classification,U
+AddressBase Premium Classification Scheme,UP,Pending Internal Investigation,U
+AddressBase Premium Classification Scheme,X,Dual Use,
+AddressBase Premium Classification Scheme,Z,Object of Interest,
+AddressBase Premium Classification Scheme,ZA,Archaeological Dig Site,Z
+AddressBase Premium Classification Scheme,ZM,Monument,Z
+AddressBase Premium Classification Scheme,ZM01,Obelisk / Milestone / Standing Stone,ZM
+AddressBase Premium Classification Scheme,ZM01OB,Obelisk,ZM01
+AddressBase Premium Classification Scheme,ZM01ST,Standing Stone,ZM01
+AddressBase Premium Classification Scheme,ZM02,Memorial / Market Cross,ZM
+AddressBase Premium Classification Scheme,ZM03,Statue,ZM
+AddressBase Premium Classification Scheme,ZM04,Castle / Historic Ruin,ZM
+AddressBase Premium Classification Scheme,ZM05,Other Structure,ZM
+AddressBase Premium Classification Scheme,ZM05BS,Boundary Stone,ZM05
+AddressBase Premium Classification Scheme,ZM05CE,Cascade / Fountain,ZM05
+AddressBase Premium Classification Scheme,ZM05PN,Permanent Art Display / Sculpture,ZM05
+AddressBase Premium Classification Scheme,ZM05WI,Windmill (Inactive),ZM05
+AddressBase Premium Classification Scheme,ZS,Stately Home,Z
+AddressBase Premium Classification Scheme,ZU,Underground Feature,Z
+AddressBase Premium Classification Scheme,ZU01,Cave,ZU
+AddressBase Premium Classification Scheme,ZU04,Pothole / Natural Hole,ZU
+AddressBase Premium Classification Scheme,ZV,Other Underground Feature,Z
+AddressBase Premium Classification Scheme,ZV01,Cellar,ZV
+AddressBase Premium Classification Scheme,ZV02,Disused Mine,ZV
+AddressBase Premium Classification Scheme,ZV02MI,Mineral Mining / Inactive,ZV02
+AddressBase Premium Classification Scheme,ZV02OI,Oil And / Gas Extraction/ Inactive,ZV02
+AddressBase Premium Classification Scheme,ZV02QI,Mineral Quarrying And / Open Extraction / Inactive,ZV02
+AddressBase Premium Classification Scheme,ZV03,Well / Spring,ZV
+AddressBase Premium Classification Scheme,ZV03SG,Spring,ZV03
+AddressBase Premium Classification Scheme,ZV03WL,Well,ZV03
+AddressBase Premium Classification Scheme,ZW,Place Of Worship,Z
+AddressBase Premium Classification Scheme,ZW99AB,Abbey,ZW
+AddressBase Premium Classification Scheme,ZW99CA,Cathedral,ZW
+AddressBase Premium Classification Scheme,ZW99CH,Church,ZW
+AddressBase Premium Classification Scheme,ZW99CP,Chapel,ZW
+AddressBase Premium Classification Scheme,ZW99GU,Gurdwara,ZW
+AddressBase Premium Classification Scheme,ZW99KH,Kingdom Hall,ZW
+AddressBase Premium Classification Scheme,ZW99LG,Lych Gate,ZW
+AddressBase Premium Classification Scheme,ZW99MQ,Mosque,ZW
+AddressBase Premium Classification Scheme,ZW99MT,Minster,ZW
+AddressBase Premium Classification Scheme,ZW99SU,Stupa,ZW
+AddressBase Premium Classification Scheme,ZW99SY,Synagogue,ZW
+AddressBase Premium Classification Scheme,ZW99TP,Temple,ZW
+VOA Special Category,001,Aa/Rac Service Centres And Boxes,
+VOA Special Category,003,Advertising Right,
+VOA Special Category,004,Agricultural Showgrounds,
+VOA Special Category,005,Air Ports (Minor),
+VOA Special Category,006,Air Strips,
+VOA Special Category,007,Aircraft Works With Airfields,
+VOA Special Category,008,Airport Let Outs,
+VOA Special Category,009,Aluminium Smelting Works,
+VOA Special Category,010,Ambulance Stations,
+VOA Special Category,011,Amusement Arcades,
+VOA Special Category,012,Amusement Parks,
+VOA Special Category,013,Animal Boarding,
+VOA Special Category,014,Arenas,
+VOA Special Category,015,Army Hereditaments,
+VOA Special Category,016,Artificial Fibre Works,
+VOA Special Category,017,Asphalt Plants,
+VOA Special Category,018,ATMs,
+VOA Special Category,019,Auction Rooms,
+VOA Special Category,021,Banks/Insurance/Building Society Offices & Other A2 Uses,
+VOA Special Category,022,Beach Huts,
+VOA Special Category,023,Beet Sugar Factories,
+VOA Special Category,024,Betting Offices,
+VOA Special Category,025,Bingo Halls,
+VOA Special Category,026,Bird Sanctuaries,
+VOA Special Category,027,Boat Yards,
+VOA Special Category,028,Bowling Alleys,
+VOA Special Category,029,Bowling Centres (Indoor),
+VOA Special Category,030,Bowling Greens (Outdoor),
+VOA Special Category,031,Breweries,
+VOA Special Category,032,"Brickworks (Traditional), Clay Tile/ Pipe Works",
+VOA Special Category,033,Bulk Cement Storage Depots,
+VOA Special Category,034,Bullion/Money Stores,
+VOA Special Category,036,Bus Stations,
+VOA Special Category,037,Cable Head End Buildings,
+VOA Special Category,038,Car Auction Buildings/Sites,
+VOA Special Category,039,Car Parks (Multi-Storey),
+VOA Special Category,040,Car Parks (Surfaced Open),
+VOA Special Category,041,Car Parks (Unsurfaced Open),
+VOA Special Category,042,Car Showrooms,
+VOA Special Category,043,Car Spaces,
+VOA Special Category,044,Car Supermarkets,
+VOA Special Category,045,Car Washes (Stand Alone),
+VOA Special Category,046,Car/Caravan Sales/Display/Hiring Sites,
+VOA Special Category,047,Caravan Parks (Leisure),
+VOA Special Category,048,Caravan Sites And Pitches,
+VOA Special Category,049,Casinos And Gambling Clubs,
+VOA Special Category,050,Cattle Breeding Centres,
+VOA Special Category,051,Cement Tile Works,
+VOA Special Category,052,Cement Works,
+VOA Special Category,053,Cemeteries,
+VOA Special Category,054,Chalet Parks,
+VOA Special Category,055,Chemical Works,
+VOA Special Category,056,Cinemas,
+VOA Special Category,057,Civic & Public Buildings (LA Occupations),
+VOA Special Category,058,Civic Amenity Sites,
+VOA Special Category,059,Civil Airports,
+VOA Special Category,060,Clubhouses,
+VOA Special Category,061,"Licensed Sports, Social And Private Members Clubs",
+VOA Special Category,062,Inns,
+VOA Special Category,063,Coking And Carbonising Plants,
+VOA Special Category,065,Colleges Of Further Education,
+VOA Special Category,066,Communication Stations,
+VOA Special Category,067,Community Day Centres,
+VOA Special Category,068,Computer Centres (Non-Purpose Built),
+VOA Special Category,069,Computer Centres (Purpose Built),
+VOA Special Category,070,Concert Halls,
+VOA Special Category,071,Concrete Batching Plants,
+VOA Special Category,072,Concrete Block Works,
+VOA Special Category,073,Concrete Product Works,
+VOA Special Category,074,Conference & Exhibition Centres,
+VOA Special Category,075,Wedding And Function Venues,
+VOA Special Category,076,Contractors Huts And Compounds,
+VOA Special Category,077,Country House Hotels,
+VOA Special Category,079,Creameries,
+VOA Special Category,080,Crematoria (With & Without Cemeteries),
+VOA Special Category,081,Cricket Centres,
+VOA Special Category,082,Cricket Grounds (County),
+VOA Special Category,083,Cricket Grounds/Pitches (Non-County),
+VOA Special Category,084,Dance Schools & Centres,
+VOA Special Category,085,Day Nurseries/Play Schools,
+VOA Special Category,086,Departmental And Walkround Stores (Large),
+VOA Special Category,087,Distilleries,
+VOA Special Category,088,District Heating Undertakings & Networks,
+VOA Special Category,089,Docks & Harbours Non Stat,
+VOA Special Category,090,Domestic Fuel Installations,
+VOA Special Category,091,Drive-To Restaurants,
+VOA Special Category,092,Drive-Thru Restaurants,
+VOA Special Category,093,Mine Water Treatment Plant And Premises,
+VOA Special Category,094,Electricity Undertakings (Non-Statutory),
+VOA Special Category,095,Exhaust & Tyre Centres,
+VOA Special Category,096,"Factories,Workshops And Warehouses(Inc Bakeries & Dairies)",
+VOA Special Category,097,Factory Shops,
+VOA Special Category,098,Farm Shops,
+VOA Special Category,099,"Field Study, Activity And Adventure Centres",
+VOA Special Category,100,Film And Tv Studios,
+VOA Special Category,101,Fire Stations,
+VOA Special Category,102,Fish Farms,
+VOA Special Category,103,Flour Mills,
+VOA Special Category,104,Food Courts,
+VOA Special Category,105,Food Processing Centres,
+VOA Special Category,106,Convenience Store,
+VOA Special Category,107,Football Grounds,
+VOA Special Category,108,Football Pitches,
+VOA Special Category,109,Football Stadia,
+VOA Special Category,110,Foundries,
+VOA Special Category,111,Funeral Parlours/Chapels Of Rest,
+VOA Special Category,112,Game Farms,
+VOA Special Category,113,Garages (Transport And Commercial),
+VOA Special Category,114,Garden Centres,
+VOA Special Category,115,Gas Processing Plants,
+VOA Special Category,116,Go Kart Rinks,
+VOA Special Category,117,Golf Courses,
+VOA Special Category,118,Golf Driving Ranges,
+VOA Special Category,119,Grain Silos,
+VOA Special Category,120,Granaries & Intervention Stores,
+VOA Special Category,121,Greyhound Racetracks,
+VOA Special Category,122,Guest & Boarding Houses,
+VOA Special Category,123,Traveller Sites,
+VOA Special Category,124,Hatcheries/ Poultry Farms,
+VOA Special Category,125,Health Farms,
+VOA Special Category,126,Heliports,
+VOA Special Category,127,Heridits Used For Primary Treatment/Processing Of Minerals,
+VOA Special Category,128,Heritage Railways,
+VOA Special Category,130,Holiday Centres,
+VOA Special Category,131,Holiday Homes Self Catering,
+VOA Special Category,132,Horse Racecourses,
+VOA Special Category,133,Hospital Let Outs,
+VOA Special Category,134,Hospitals & Clinics NHS,
+VOA Special Category,135,Hospitals & Clinics (Private),
+VOA Special Category,136,Hostels,
+VOA Special Category,137,Hotels (3 Star And Under),
+VOA Special Category,138,Hotels (4 Star And Above) & Chain Operated 3 Star,
+VOA Special Category,139,Hypermarkets/Superstores (Over 2500 m2),
+VOA Special Category,140,Ice Rinks,
+VOA Special Category,141,Interactive Telephone Kiosks,
+VOA Special Category,142,Iron And/Or Steel Works,
+VOA Special Category,143,Kennels And Catteries,
+VOA Special Category,144,Laboratories,
+VOA Special Category,145,Lakes With Water Sport Facilities,
+VOA Special Category,146,Land Used For Advertising,
+VOA Special Category,147,Land Used For Car Boot Sales,
+VOA Special Category,148,Land Used For Storage,
+VOA Special Category,149,Landfill Gas Generator Sites,
+VOA Special Category,150,Land Used For Waste Composting,
+VOA Special Category,151,Large Distribution Warehouses,
+VOA Special Category,152,Large Food Stores (750-2500 m2),
+VOA Special Category,153,"Large Industrials (Over 20,000 m2)",
+VOA Special Category,154,Large Shops (750-1850 m2),
+VOA Special Category,155,Large Shops (Over 1850 m2),
+VOA Special Category,156,Libraries,
+VOA Special Category,157,Liquid Bulk Storage (Incl Petrol & Oil),
+VOA Special Category,158,Livestock Markets,
+VOA Special Category,159,Local Authority Schools,
+VOA Special Category,161,Lorry Parks,
+VOA Special Category,162,Maltings - Non Trad,
+VOA Special Category,163,Maltings - Trad,
+VOA Special Category,164,Marinas,
+VOA Special Category,165,Markets (Other Than Livestock),
+VOA Special Category,166,Mineral Depot And Premises,
+VOA Special Category,167,Mineral Producing Hereditament - Blockstone,
+VOA Special Category,168,Mineral Producing Hereditament - Brine,
+VOA Special Category,169,Mineral Producing Hereditament - Chalk,
+VOA Special Category,170,Mineral Producing Hereditament - China Clay,
+VOA Special Category,171,Mineral Producing Hereditament - Clay,
+VOA Special Category,172,Mineral Producing Hereditament - Coal,
+VOA Special Category,173,Mineral Producing Hereditament - Fluorspar,
+VOA Special Category,174,Mineral Producing Hereditament - Gas,
+VOA Special Category,175,Mineral Producing Hereditament - Hardrock,
+VOA Special Category,176,Mineral Producing Hereditament - Inert,
+VOA Special Category,177,Mineral Producing Hereditament - Oil,
+VOA Special Category,178,Mineral Producing Hereditament - Other Mineral Category,
+VOA Special Category,179,Mineral Producing Hereditament - Putrescible,
+VOA Special Category,180,Mineral Producing Hereditament - Sand & Gravel,
+VOA Special Category,181,Mineral Producing Hereditament - Sand,
+VOA Special Category,183,Mineral Producing Hereditament - Slate,
+VOA Special Category,187,Mod Hereditaments,
+VOA Special Category,188,Model Villages,
+VOA Special Category,189,Moorings (Floating Hereditaments),
+VOA Special Category,190,Mortuaries,
+VOA Special Category,191,Motor Racetracks,
+VOA Special Category,192,Motor Vehicle Works,
+VOA Special Category,193,Motorway Service Area Let Outs,
+VOA Special Category,194,Motorway Service Areas & Major Road Service Areas,
+VOA Special Category,195,Museums And Art Galleries (Contractors),
+VOA Special Category,196,Museums And Art Galleries (Non-Contractors),
+VOA Special Category,197,Navy Hereditaments,
+VOA Special Category,198,Newspaper Printing Works,
+VOA Special Category,199,Night Clubs & Discotheques,
+VOA Special Category,200,Nuclear Establishments,
+VOA Special Category,201,Nursing Homes (Inc Old Peoples Homes),
+VOA Special Category,202,Observatories,
+VOA Special Category,203,Offices (Inc Computer Centres),
+VOA Special Category,204,Offices Headquarters/Institutional,
+VOA Special Category,205,Oil Refineries,
+VOA Special Category,206,Oxbridge Colleges,
+VOA Special Category,207,Paper Mills,
+VOA Special Category,208,Pavilions,
+VOA Special Category,209,Petrol Filling Stations,
+VOA Special Category,210,Pharmacies,
+VOA Special Category,211,Photographic Booths,
+VOA Special Category,212,Pipelines,
+VOA Special Category,213,Pleasure Piers,
+VOA Special Category,214,Point To Point And Eventing Courses,
+VOA Special Category,215,Police Stations,
+VOA Special Category,216,Polo Grounds,
+VOA Special Category,217,Post Office Sorting Centres,
+VOA Special Category,218,Potteries,
+VOA Special Category,220,Prison Service Hereditaments,
+VOA Special Category,221,Secondary Aggregate Processing Plant And Premises,
+VOA Special Category,222,Provender Mills,
+VOA Special Category,223,Public And Independent Schools,
+VOA Special Category,224,Public Conveniences,
+VOA Special Category,225,Public Halls,
+VOA Special Category,226,Public Houses/Pub Restaurants,
+VOA Special Category,227,Public Houses/Pub Restaurants (Including Lodge),
+VOA Special Category,228,Public Telephone Kiosks,
+VOA Special Category,229,Racing Stables,
+VOA Special Category,230,Raf Hereditaments,
+VOA Special Category,231,Railways & Tramways (Non Leisure),
+VOA Special Category,232,Recording Studios,
+VOA Special Category,233,Refuse Destructor Plants/Disposal Sites,
+VOA Special Category,234,Restaurants,
+VOA Special Category,235,Retail Warehouses And Foodstores,
+VOA Special Category,236,Riding Schools & Livery Stables,
+VOA Special Category,237,Rifle & Weapons Ranges,
+VOA Special Category,238,Roadside Restaurants,
+VOA Special Category,239,Roller Skating Rinks,
+VOA Special Category,240,Royal Palaces,
+VOA Special Category,241,Rugby League Grounds,
+VOA Special Category,242,Rugby Union Grounds,
+VOA Special Category,243,Sales Kiosks,
+VOA Special Category,244,Scrap Metal/Breakers Yard,
+VOA Special Category,245,Sea Dredged Aggregate Processing Plants & Depots,
+VOA Special Category,246,Sewage Works,
+VOA Special Category,247,Ship Building Yards,
+VOA Special Category,248,Ship Repair Yards,
+VOA Special Category,249,Shops,
+VOA Special Category,250,Showhouses,
+VOA Special Category,251,Showrooms,
+VOA Special Category,252,Ski Centres,
+VOA Special Category,253,Snooker Halls/Clubs,
+VOA Special Category,254,Speedway Racetracks,
+VOA Special Category,255,Spoil Heap Workings,
+VOA Special Category,256,Sporting Rights,
+VOA Special Category,257,Sports & Leisure Centres (Local Authority) (Dry Only),
+VOA Special Category,258,Sports & Leisure Centres (Local Authority) (Wet & Dry),
+VOA Special Category,259,Sports & Leisure Centres (Private) (Dry Only),
+VOA Special Category,260,Sports & Leisure Centres (Private) (Wet & Dry),
+VOA Special Category,261,Sports Grounds,
+VOA Special Category,262,Sports Stadia,
+VOA Special Category,263,Squash Courts,
+VOA Special Category,264,Stables And Loose Boxes,
+VOA Special Category,265,Stately Homes & Historic Houses,
+VOA Special Category,266,Station Let Outs,
+VOA Special Category,267,Storage Depots,
+VOA Special Category,268,Stores,
+VOA Special Category,269,Stud Farms,
+VOA Special Category,270,Studios,
+VOA Special Category,272,Swimming Pools (Local Authority),
+VOA Special Category,273,Swimming Pools (Private),
+VOA Special Category,274,Tanneries,
+VOA Special Category,275,Telecommunications Cable Networks,
+VOA Special Category,276,Telecommunications Switching Centres,
+VOA Special Category,277,Tennis Centres,
+VOA Special Category,278,Tennis Courts/Clubs,
+VOA Special Category,279,Theatres,
+VOA Special Category,280,Theme Parks,
+VOA Special Category,281,Timeshare Complexes,
+VOA Special Category,282,"Tolls (Ferries, Roads And Bridges)",
+VOA Special Category,283,Totalisators On Horse Racecourses,
+VOA Special Category,284,Tourist Attractions (Dark Rides),
+VOA Special Category,285,Training Centre (Non Residential),
+VOA Special Category,286,Training Centre (Residential),
+VOA Special Category,287,Truck Stops,
+VOA Special Category,288,Universities (Excluding Oxbridge),
+VOA Special Category,289,Vehicle Repair Workshops & Garages,
+VOA Special Category,290,Vehicle Testing Centres (With Test Tracks),
+VOA Special Category,291,Vehicle Testing Centres (Without Test Tracks),
+VOA Special Category,292,Veterinary Clinics / Animal Clinics,
+VOA Special Category,293,"Village Halls, Scout Huts, Cadet Huts Etc",
+VOA Special Category,294,Vineyards/Wineries,
+VOA Special Category,295,Wafer Fabrications,
+VOA Special Category,296,War Games Courses/ Misc Ag Use,
+VOA Special Category,297,Waste Incinerator Plants,
+VOA Special Category,298,Waste Recycling Plants,
+VOA Special Category,299,Waste Transfer Stations,
+VOA Special Category,300,Water Undertakings (Non-Statutory),
+VOA Special Category,301,Wholesale Warehouses,
+VOA Special Category,302,Windmills,
+VOA Special Category,303,Bars (Valued On Floor Space),
+VOA Special Category,304,Zoos & Safari Parks,
+VOA Special Category,401,Abattoirs & Slaughter Houses (Rental Valuation),
+VOA Special Category,402,Agricultural Research Centres,
+VOA Special Category,403,Aquaria,
+VOA Special Category,404,Archives,
+VOA Special Category,405,Boathouses,
+VOA Special Category,406,Bus Garages (Contractors Valuation),
+VOA Special Category,407,Bus Garages (Rental Valuation),
+VOA Special Category,408,Business Units,
+VOA Special Category,409,Cafes,
+VOA Special Category,410,Changing Rooms,
+VOA Special Category,411,Coastguard Stations,
+VOA Special Category,413,Cold Stores (Rental Valuation),
+VOA Special Category,414,Courts (Contractors Valuation),
+VOA Special Category,415,Courts (Rental Valuation),
+VOA Special Category,416,Gymnasia/Fitness Suites,
+VOA Special Category,417,Hairdressing/Beauty Salons,
+VOA Special Category,418,Information/Visitor Centres,
+VOA Special Category,419,Land Used For Display,
+VOA Special Category,420,Lifeboat Stations,
+VOA Special Category,421,Miniature Railways,
+VOA Special Category,422,Pack Houses,
+VOA Special Category,423,Peat Fields,
+VOA Special Category,424,Pet Grooming Parlours,
+VOA Special Category,425,Pharmacies Within/Adjacent To Surgery/Health Centre,
+VOA Special Category,426,Pitch And Putt/Putting Greens,
+VOA Special Category,427,"Pitches For Stalls, Sales Or Promotions",
+VOA Special Category,428,Police Training Colleges,
+VOA Special Category,429,Post Offices,
+VOA Special Category,430,Pumping Mines,
+VOA Special Category,431,Religious Retreats/Study Centres (Residential),
+VOA Special Category,432,Sales Offices,
+VOA Special Category,433,Occupation Within A Statutory Port Undertaking,
+VOA Special Category,434,"Statutory Docks And Harbours (Non-Formula, Prescribed)",
+VOA Special Category,435,Statutory Docks And Harbours (Other),
+VOA Special Category,436,Surgeries/Clinics/Heath Centres (Contractors Valuation),
+VOA Special Category,437,Surgeries/Clinics/Heath Centres (Rental Valuation),
+VOA Special Category,438,Telescope Sites,
+VOA Special Category,439,University - Ancillary Land Or Buildings,
+VOA Special Category,440,University Occupation Within Hospitals,
+VOA Special Category,441,Weighbridges,
+VOA Special Category,442,Takeaway Food Outlet (Predominantly Off Premises),
+VOA Special Category,500,Cafes/Restaurants Within/Part Of Specialist Property,
+VOA Special Category,501,Car Parking Within/Part Of Specialist Property,
+VOA Special Category,502,Garages Within/Part Of Specialist Property,
+VOA Special Category,503,Gymnasia/Fitness Suites Within/Part Of Specialist Property,
+VOA Special Category,504,Kiosks Within/Part Of Specialist Property,
+VOA Special Category,505,Nurseries/Creches Within/Part Of Specialist Property,
+VOA Special Category,506,Offices Within/Part Of Specialist Property,
+VOA Special Category,507,Salons/Clinics Within/Part Of Specialist Property,
+VOA Special Category,508,Shops Within/Part Of Specialist Property,
+VOA Special Category,509,Sports & Leisure Centres Within/Part Of Specialist Property,
+VOA Special Category,510,Stores Within/Part Of Specialist Property,
+VOA Special Category,511,Warehouses Within/Part Of Specialist Property,
+VOA Special Category,512,Workshops Within/Part Of Specialist Property,
+VOA Special Category,513,Miscellaneous Within/Part Of Specialist Property,
+VOA Special Category,710,Residual Malls,
+VOA Special Category,712,Rail Freight Depots,
+VOA Special Category,714,Rail Maintenance Depots,
+VOA Special Category,715,Football Training Grounds,
+VOA Special Category,721,Self Storage Facility,
+VOA Special Category,722,Serviced Apartments,
+VOA Special Category,725,Park & Ride Car Parks,
+VOA Special Category,726,Telecommunications Large Broadcast Sites,
+VOA Special Category,727,Waste Anaerobic Digestion Plants,
+VOA Special Category,728,Bagging Plant And Premises,
+VOA Special Category,729,Renewable Generators - Mixed Technologies,
+VOA Special Category,730,"Biomass Biological (Crop And Slurry Based Anaerobic Digesters, Including Gas To Grid)",
+VOA Special Category,733,Battery Storage,
+VOA Special Category,737,Ferry Terminal,
+VOA Special Category,738,Builders Merchant,
+VOA Special Category,739,Soccer Centres,
+VOA Special Category,741,Independent Gas Transporters (),
+VOA Special Category,742,Independent Distribution Network Operators (),
+VOA Special Category,743,Renewable Power Generators - Photovoltaic,
+VOA Special Category,744,Renewable Power Generators - Wind,
+VOA Special Category,745,Renewable Power Generators - Other,
+VOA Special Category,746,Renewable Power Generators - Hydro,
+VOA Special Category,747,Fossil Fuel Power Stations,
+VOA Special Category,748,Nuclear Power Stations,
+VOA Special Category,757,Plant Nurseries,
+VOA Special Category,992,Commercial Miscellaneous,
+VOA Special Category,993,Leisure Miscellaneous,
+VOA Special Category,994,Industrial Miscellaneous,
+VOA Special Category,995,Educational Miscellaneous,
+VOA Special Category,997,Minerals Miscellaneous,
+VOA Special Category,998,Crown Miscellaneous,
+VOA Special Category,999,Miscellaneous,
+VOA Primary Description,CA,Advertising Right and premises,
+VOA Primary Description,CA1,Advertising Station and premises,
+VOA Primary Description,CC,Camping Site and premises,
+VOA Primary Description,CC1,Caravan Park and premises,
+VOA Primary Description,CC2,Holiday Centre and premises,
+VOA Primary Description,CC3,Caravan & Pitch and premises,
+VOA Primary Description,CC4,Caravan Pitch and premises,
+VOA Primary Description,CC5,Chalet Park and premises,
+VOA Primary Description,CC6,Caravan And Chalet Park and premises,
+VOA Primary Description,CC7,Time Share Complex and premises,
+VOA Primary Description,CG,Petrol Filling Station and premises,
+VOA Primary Description,CG1,Vehicle Repair Workshop and premises,
+VOA Primary Description,CG2,Garage and premises,
+VOA Primary Description,CG3,Car Showroom and premises,
+VOA Primary Description,CG4,Road Haulage Depot and premises,
+VOA Primary Description,CH,Hotel and premises,
+VOA Primary Description,CH1,Self Catering Holiday Unit and premises,
+VOA Primary Description,CH2,Guest House and premises,
+VOA Primary Description,CH3,Motel and premises,
+VOA Primary Description,CL,Public House and premises,
+VOA Primary Description,CL1,Wine Bar and premises,
+VOA Primary Description,CL2,Club and premises,
+VOA Primary Description,CM,Market and premises,
+VOA Primary Description,CM1,Market and premises,
+VOA Primary Description,CO,Offices and premises,
+VOA Primary Description,CO1,Computer Centre and premises,
+VOA Primary Description,CP,Car Park and premises,
+VOA Primary Description,CP1,Car Parking Space and premises,
+VOA Primary Description,CR,Restaurant and premises,
+VOA Primary Description,CR1,Cafe and premises,
+VOA Primary Description,CR2,Food Court and premises,
+VOA Primary Description,CS,Shop and premises,
+VOA Primary Description,CS1,Bank and premises,
+VOA Primary Description,CS10,Retail Warehouse and premises,
+VOA Primary Description,CS2,Betting Shop and premises,
+VOA Primary Description,CS3,Hairdressing Salon and premises,
+VOA Primary Description,CS4,Kiosk and premises,
+VOA Primary Description,CS5,Launderette and premises,
+VOA Primary Description,CS6,Post Office and premises,
+VOA Primary Description,CS7,Showroom and premises,
+VOA Primary Description,CS8,Hypermarket and premises,
+VOA Primary Description,CS9,Superstore and premises,
+VOA Primary Description,CW,Warehouse and premises,
+VOA Primary Description,CW1,Land Used For Storage and premises,
+VOA Primary Description,CW2,Storage Depot and premises,
+VOA Primary Description,CW3,Store and premises,
+VOA Primary Description,CX,Other commercial,
+VOA Primary Description,EL,School and premises,
+VOA Primary Description,EL1,College and premises,
+VOA Primary Description,EM,Library and premises,
+VOA Primary Description,EM1,Museum and premises,
+VOA Primary Description,EN1,Day Nursery and premises,
+VOA Primary Description,EP,School and premises,
+VOA Primary Description,EP1,College and premises,
+VOA Primary Description,EU,University and premises,
+VOA Primary Description,EX,"Other educational, training and cultural",
+VOA Primary Description,FD,Dock Hereditament and premises,
+VOA Primary Description,FE,Electricity Hereditament and premises,
+VOA Primary Description,IF,Factory and premises,
+VOA Primary Description,IF1,Mill and premises,
+VOA Primary Description,IF2,Works and premises,
+VOA Primary Description,IF3,Workshop and premises,
+VOA Primary Description,IF4,Business Unit and premises,
+VOA Primary Description,IM,Quarry and premises,
+VOA Primary Description,IM1,Mine and premises,
+VOA Primary Description,IM2,Brickworks and premises,
+VOA Primary Description,IM3,Concrete Batching Plant and premises,
+VOA Primary Description,IM4,Tipping Site and premises,
+VOA Primary Description,IM5,Spoil Heap Workings and premises,
+VOA Primary Description,IM6,Peat Fields and premises,
+VOA Primary Description,IMX,"Quarries, mines etc.",
+VOA Primary Description,IX,Other industrial,
+VOA Primary Description,LC,Community Centre and premises,
+VOA Primary Description,LC1,Club House and premises,
+VOA Primary Description,LC2,Leisure Centre and premises,
+VOA Primary Description,LC3,Hall and premises,
+VOA Primary Description,LH1,Beach Hut and premises,
+VOA Primary Description,LI,Sports Centre and premises,
+VOA Primary Description,LI1,Stadium and premises,
+VOA Primary Description,LS,Sports Ground and premises,
+VOA Primary Description,LS1,Sporting Right and premises,
+VOA Primary Description,LS2,Golf Course and premises,
+VOA Primary Description,LS3,Marina and premises,
+VOA Primary Description,LS4,Playing Field and premises,
+VOA Primary Description,LS5,Football Ground and premises,
+VOA Primary Description,LS6,Swimming Pool and premises,
+VOA Primary Description,LS7,Tennis Centre and premises,
+VOA Primary Description,LT,Cinema and premises,
+VOA Primary Description,LT1,Amusement Arcade and premises,
+VOA Primary Description,LT2,Bingo Hall and premises,
+VOA Primary Description,LT3,Theatre and premises,
+VOA Primary Description,LT4,Amusement Park and premises,
+VOA Primary Description,LX,Other leisure,
+VOA Primary Description,MC,Cemetery and premises,
+VOA Primary Description,MC1,Crematorium and premises,
+VOA Primary Description,MH,Surgery and premises,
+VOA Primary Description,MH1,Health Centre and premises,
+VOA Primary Description,MH2,Hospital and premises,
+VOA Primary Description,MH3,Hospital and premises,
+VOA Primary Description,ML,Offices and premises,
+VOA Primary Description,MP,Police Station and premises,
+VOA Primary Description,MP1,Law Court and premises,
+VOA Primary Description,MP2,Prison and premises,
+VOA Primary Description,MR,Hostel and premises,
+VOA Primary Description,MR1,Home and premises,
+VOA Primary Description,MS1,Fire Station and premises,
+VOA Primary Description,MS2,Ambulance Station premises,
+VOA Primary Description,MT1,Communication Station and premises,
+VOA Primary Description,MT2,Public Telephone Kiosk and premises,
+VOA Primary Description,MTX,Telecommunications (Unclassified),
+VOA Primary Description,MX,Other properties,
+VOA Primary Description,NT,Bus Station and premises,
+VOA Primary Description,NT1,Mooring and premises,
+VOA Primary Description,NT3,Wharf and premises,
+VOA Primary Description,NW,Sewage Treatment Works and premises,
+VOA Primary Description,NX,Other utilities,
+VOA Primary Description,TD1,Forces Careers Office and premises,
+VOA Primary Description,TD2,Auxiliary Defence Establishment and premises,
+VOA Primary Description,TX,Treasury (Unclassified),

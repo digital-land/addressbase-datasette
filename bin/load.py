@@ -23,14 +23,20 @@ primary_keys = {
     "BLPU": "UPRN",
     "STREET": "USRN",
     "LPI": "LPI_KEY",
-    # CLASSIFICATION_CODE isn't an AddressBase Premium header-driven table
-    # (it's built separately by load_classification_code below), but adding
-    # its pk here makes CLASSIFICATION.CLASSIFICATION_CODE pick up a
-    # foreign key + index via the generic mechanism below
-    "CLASSIFICATION_CODE": "CLASSIFICATION_CODE",
 }
 
 foreign_keys = {v: k for k, v in primary_keys.items()}
+
+# CLASSIFICATION_CODE isn't an AddressBase Premium header-driven table
+# (it's built separately by load_classification_code below). Its key is
+# (CLASS_SCHEME, CLASSIFICATION_CODE), not CLASSIFICATION_CODE alone: the
+# same code string means different things in different schemes (e.g. "CA"
+# is "Agricultural" in the AddressBase scheme but "Advertising Right and
+# premises" as a VOA Primary Description code), so this needs a composite
+# foreign key rather than the single-column mechanism above.
+composite_foreign_keys = {
+    "CLASSIFICATION": (("CLASS_SCHEME", "CLASSIFICATION_CODE"), "CLASSIFICATION_CODE"),
+}
 
 col_types = {
     "UPRN": "INTEGER",
@@ -177,9 +183,11 @@ def commit(connection):
     connection.commit()
 
 
-def add_index(table, col, unique=False):
-    idx = f"{table}_{col}_IDX"
-    indexes[idx] = {"table": table, "col": col, "unique": unique}
+def add_index(table, cols, unique=False):
+    # cols may be a single column name or a tuple of columns (composite index)
+    cols = (cols,) if isinstance(cols, str) else tuple(cols)
+    idx = f"{table}_{'_'.join(cols)}_IDX"
+    indexes[idx] = {"table": table, "cols": cols, "unique": unique}
 
 
 def create_table(connecton, t):
@@ -211,6 +219,13 @@ def create_table(connecton, t):
             if foreign_table != table:
                 sql += f"{sep}FOREIGN KEY ({col}) REFERENCES {foreign_table} ({col})"
                 add_index(table, col)
+
+    if table in composite_foreign_keys:
+        cols, foreign_table = composite_foreign_keys[table]
+        col_list = ", ".join(cols)
+        sql += f"{sep}FOREIGN KEY ({col_list}) REFERENCES {foreign_table} ({col_list})"
+        add_index(table, cols)
+
     sql += ")"
 
     connection.execute(sql)
@@ -254,7 +269,8 @@ def create_tables(connecton):
 def create_indexes(connecton):
     for idx, i in indexes.items():
         unique = "UNIQUE " if i["unique"] else ""
-        sql = f'CREATE {unique}INDEX IF NOT EXISTS {idx} ON {i["table"]} ({i["col"]})'
+        cols = ", ".join(i["cols"])
+        sql = f'CREATE {unique}INDEX IF NOT EXISTS {idx} ON {i["table"]} ({cols})'
         print(sql)
         connection.execute(sql)
 
@@ -262,15 +278,20 @@ def create_indexes(connecton):
 def load_classification_code(connection, path):
     # separate from the AddressBase Premium tables (which already have a
     # CLASSIFICATION table of per-UPRN classification records); this is
-    # the code/description/parent lookup built by bin/classification.py.
-    # CLASSIFICATION.CLASSIFICATION_CODE has a foreign key into this table
-    # (see primary_keys/foreign_keys above), joining the two.
+    # the code/description/parent lookup built by bin/classification.py,
+    # covering all three CLASS_SCHEME values CLASSIFICATION uses. The key
+    # is (CLASS_SCHEME, CLASSIFICATION_CODE) - see composite_foreign_keys
+    # above for why CLASSIFICATION_CODE alone isn't unique across schemes.
     connection.execute(
         """
         CREATE TABLE CLASSIFICATION_CODE (
-            CLASSIFICATION_CODE TEXT PRIMARY KEY,
+            CLASS_SCHEME TEXT,
+            CLASSIFICATION_CODE TEXT,
             DESCRIPTION TEXT,
-            PARENT TEXT REFERENCES CLASSIFICATION_CODE (CLASSIFICATION_CODE)
+            PARENT TEXT,
+            PRIMARY KEY (CLASS_SCHEME, CLASSIFICATION_CODE),
+            FOREIGN KEY (CLASS_SCHEME, PARENT)
+                REFERENCES CLASSIFICATION_CODE (CLASS_SCHEME, CLASSIFICATION_CODE)
         )
         """
     )
@@ -279,7 +300,7 @@ def load_classification_code(connection, path):
         next(reader)  # header
         connection.executemany(
             "INSERT INTO CLASSIFICATION_CODE "
-            "(CLASSIFICATION_CODE, DESCRIPTION, PARENT) VALUES (?, ?, ?)",
+            "(CLASS_SCHEME, CLASSIFICATION_CODE, DESCRIPTION, PARENT) VALUES (?, ?, ?, ?)",
             reader,
         )
     connection.commit()
