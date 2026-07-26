@@ -5,6 +5,7 @@ Load AddressBase into sqlite3 database and explore it using datasette
 1. Order a copy of [OS AddressBase Premium](https://www.ordnancesurvey.co.uk/business-government/products/addressbase-premium).
 2. Download the CSV version and save it as `cache/AB76GB_CSV.zip`
 3. Download the [CSV header files](https://docs.os.uk/os-downloads/products/addresses-and-names-portfolio/addressbase-premium/addressbase-premium-downloads#addressbase-premium-header-files) and save them as `cache/addressbase-premium-header-files.zip`
+4. Download the [Classification codes](https://docs.os.uk/os-downloads/products/addresses-and-names-portfolio/addressbase-fundamentals/classification-scheme) and save the as `cache/addressbase-product-classification-scheme.zip`
 
 # Building the guidance and database
 
