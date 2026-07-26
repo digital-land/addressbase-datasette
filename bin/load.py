@@ -29,13 +29,18 @@ foreign_keys = {v: k for k, v in primary_keys.items()}
 
 # CLASSIFICATION_CODE isn't an AddressBase Premium header-driven table
 # (it's built separately by load_classification_code below). Its key is
-# (CLASS_SCHEME, CLASSIFICATION_CODE), not CLASSIFICATION_CODE alone: the
-# same code string means different things in different schemes (e.g. "CA"
-# is "Agricultural" in the AddressBase scheme but "Advertising Right and
-# premises" as a VOA Primary Description code), so this needs a composite
-# foreign key rather than the single-column mechanism above.
-composite_foreign_keys = {
-    "CLASSIFICATION": (("CLASS_SCHEME", "CLASSIFICATION_CODE"), "CLASSIFICATION_CODE"),
+# really (CLASS_SCHEME, CLASSIFICATION_CODE): the same code string means
+# different things in different schemes (e.g. "CA" is "Agricultural" in
+# the AddressBase scheme but "Advertising Right and premises" as a VOA
+# Primary Description code). But Datasette's foreign key detection drops
+# composite (multi-column) foreign keys entirely - it only auto-links
+# single-column ones - so CLASSIFICATION gets a generated column
+# combining the two into one string, and that's the actual FK column.
+generated_columns = {
+    "CLASSIFICATION": ("CLASSIFICATION_CODE_KEY", "CLASS_SCHEME || '|' || CLASSIFICATION_CODE"),
+}
+generated_foreign_keys = {
+    "CLASSIFICATION": ("CLASSIFICATION_CODE_KEY", "CLASSIFICATION_CODE"),
 }
 
 col_types = {
@@ -213,6 +218,11 @@ def create_table(connecton, t):
             else:
                 defer_pk_index = True
 
+    if table in generated_columns:
+        col, expr = generated_columns[table]
+        sql += f"{sep}{col} TEXT GENERATED ALWAYS AS ({expr}) VIRTUAL"
+        sep = ",\n    "
+
     for col in t["fieldnames"]:
         if col in foreign_keys:
             foreign_table = foreign_keys.get(col, None)
@@ -220,11 +230,10 @@ def create_table(connecton, t):
                 sql += f"{sep}FOREIGN KEY ({col}) REFERENCES {foreign_table} ({col})"
                 add_index(table, col)
 
-    if table in composite_foreign_keys:
-        cols, foreign_table = composite_foreign_keys[table]
-        col_list = ", ".join(cols)
-        sql += f"{sep}FOREIGN KEY ({col_list}) REFERENCES {foreign_table} ({col_list})"
-        add_index(table, cols)
+    if table in generated_foreign_keys:
+        col, foreign_table = generated_foreign_keys[table]
+        sql += f"{sep}FOREIGN KEY ({col}) REFERENCES {foreign_table} ({col})"
+        add_index(table, col)
 
     sql += ")"
 
@@ -279,30 +288,42 @@ def load_classification_code(connection, path):
     # separate from the AddressBase Premium tables (which already have a
     # CLASSIFICATION table of per-UPRN classification records); this is
     # the code/description/parent lookup built by bin/classification.py,
-    # covering all three CLASS_SCHEME values CLASSIFICATION uses. The key
-    # is (CLASS_SCHEME, CLASSIFICATION_CODE) - see composite_foreign_keys
-    # above for why CLASSIFICATION_CODE alone isn't unique across schemes.
+    # covering all three CLASS_SCHEME values CLASSIFICATION uses. Keyed by
+    # a single CLASSIFICATION_CODE_KEY ("scheme|code") rather than a
+    # composite (CLASS_SCHEME, CLASSIFICATION_CODE) key, to match
+    # CLASSIFICATION's generated FK column above - Datasette only
+    # auto-links single-column foreign keys. Rows are inserted here
+    # directly (not via a header-driven table), so the key can just be
+    # computed in Python rather than needing a GENERATED column, which
+    # sqlite doesn't allow as part of a PRIMARY KEY anyway.
     connection.execute(
         """
         CREATE TABLE CLASSIFICATION_CODE (
+            CLASSIFICATION_CODE_KEY TEXT PRIMARY KEY,
             CLASS_SCHEME TEXT,
             CLASSIFICATION_CODE TEXT,
             DESCRIPTION TEXT,
             PARENT TEXT,
-            PRIMARY KEY (CLASS_SCHEME, CLASSIFICATION_CODE),
-            FOREIGN KEY (CLASS_SCHEME, PARENT)
-                REFERENCES CLASSIFICATION_CODE (CLASS_SCHEME, CLASSIFICATION_CODE)
+            PARENT_KEY TEXT REFERENCES CLASSIFICATION_CODE (CLASSIFICATION_CODE_KEY)
         )
         """
     )
-    with open(path, newline="") as f:
-        reader = csv.reader(f)
-        next(reader)  # header
-        connection.executemany(
-            "INSERT INTO CLASSIFICATION_CODE "
-            "(CLASS_SCHEME, CLASSIFICATION_CODE, DESCRIPTION, PARENT) VALUES (?, ?, ?, ?)",
-            reader,
-        )
+
+    def rows():
+        with open(path, newline="") as f:
+            reader = csv.reader(f)
+            next(reader)  # header
+            for scheme, code, desc, parent in reader:
+                key = f"{scheme}|{code}"
+                parent_key = f"{scheme}|{parent}" if parent else ""
+                yield (key, scheme, code, desc, parent, parent_key)
+
+    connection.executemany(
+        "INSERT INTO CLASSIFICATION_CODE "
+        "(CLASSIFICATION_CODE_KEY, CLASS_SCHEME, CLASSIFICATION_CODE, DESCRIPTION, "
+        "PARENT, PARENT_KEY) VALUES (?, ?, ?, ?, ?, ?)",
+        rows(),
+    )
     connection.commit()
 
 
