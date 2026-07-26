@@ -14,11 +14,7 @@ We recommend working in [virtual environment](http://docs.python-guide.org/en/la
     $ make init
     $ make
 
-Downloading the data and building the database and indexes can take more than an hour on an modern laptop.
-To just build the guidance and content:
-
-    $ make docs
-
+Note that building the database and indexes can take more than an hour on an modern laptop.
 You can explore the data in a browser using datasette:
 
     $ make serve
